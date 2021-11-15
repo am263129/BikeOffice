@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-primary{
+    color:#57de77
+}
+.text-primary-dark{
+    color:#003b3a
+}
+.bg-primary{
+    background-color: #57de77;
+}
+
+.bg-primary-dark{
+    background-color: #003b3a;
+}

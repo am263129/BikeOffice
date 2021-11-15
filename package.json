@@ -25,5 +25,12 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "tailwindcss": "^2.2.19"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.5.0",
+        "@emotion/styled": "^11.3.0",
+        "@mui/icons-material": "^5.1.0",
+        "@mui/material": "^5.1.0",
+        "react-router-dom": "^6.0.2"
     }
 }

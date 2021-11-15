@@ -12,7 +12,7 @@
 <body>
 
     <!-- React root DOM -->
-    <div id="example" class="w-full bg-red-300">
+    <div id="root" class="w-full h-full">
     </div>
 
     <!-- React JS -->
