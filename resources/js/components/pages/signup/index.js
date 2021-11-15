@@ -19,12 +19,15 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom'
 
 const MySwal = withReactContent(swal)
 
 export default function SignUpPage() {
     const [match, setMatch] = useState(null)
     const [show, setModalShow] = useState(false)
+    const [redirectpage, setRedirect] = useState(null)
+
     const [values, setValues] = React.useState({
         firstname: '',
         lastname: '',
@@ -74,10 +77,12 @@ export default function SignUpPage() {
                 .then(
                     response => {
                         MySwal.fire({
-                            title: <strong>{response.status == "success" ? "Success" : "Error!"}</strong>,
+                            title: <strong>{response.data.result == "success" ? "Success" : "Error!"}</strong>,
                             html: <i>{response.data.message}</i>,
-                            icon: response.status == "success" ? "success" : "error"
-                        })
+                            icon: response.data.result == "success" ? "success" : "error"
+                        }).then(function () {
+                        }, function (dismiss) {
+                        });
                     }
                 )
                 .catch(error => {
@@ -94,6 +99,7 @@ export default function SignUpPage() {
     }, [values.password, values.confirm])
 
     return (
+
         <Layout>
             {/* <SweetAlert
                 show={show}

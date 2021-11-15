@@ -13,6 +13,9 @@ import SigninPage from './pages/signin';
 import SignUpPage from './pages/signup';
 import PercursosPage from './pages/user/percursos';
 import PercursoPage from './pages/user/Percurso';
+import TypologyPage from './pages/admin/typology';
+import CityPage from './pages/admin/cities';
+import CoursePage from './pages/admin/course';
 
 function Example() {
 
@@ -32,6 +35,9 @@ function Example() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/percursos" element={<PercursosPage />} />
           <Route path="/percurso" element={<PercursoPage />} />
+          <Route path="/admin.typology" element={<TypologyPage />} />
+          <Route path="/admin.city" element={<CityPage />} />
+          <Route path="/admin.course" element={<CoursePage />} />
         </Routes>
       </BrowserRouter>
     </div>
