@@ -3761,6 +3761,94 @@ function isHostComponent(element) {
 
 /***/ }),
 
+/***/ "./node_modules/@mui/icons-material/DeviceHub.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/@mui/icons-material/DeviceHub.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
+
+var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
+  d: "m17 16-4-4V8.82C14.16 8.4 15 7.3 15 6c0-1.66-1.34-3-3-3S9 4.34 9 6c0 1.3.84 2.4 2 2.82V12l-4 4H3v5h5v-3.05l4-4.2 4 4.2V21h5v-5h-4z"
+}), 'DeviceHub');
+
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@mui/icons-material/GolfCourse.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/GolfCourse.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
+
+var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+var _default = (0, _createSvgIcon.default)([/*#__PURE__*/(0, _jsxRuntime.jsx)("circle", {
+  cx: "19.5",
+  cy: "19.5",
+  r: "1.5"
+}, "0"), /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
+  d: "M17 5.92 9 2v18H7v-1.73c-1.79.35-3 .99-3 1.73 0 1.1 2.69 2 6 2s6-.9 6-2c0-.99-2.16-1.81-5-1.97V8.98l6-3.06z"
+}, "1")], 'GolfCourse');
+
+exports["default"] = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@mui/icons-material/LocationCity.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@mui/icons-material/LocationCity.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@mui/icons-material/utils/createSvgIcon.js"));
+
+var _jsxRuntime = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/(0, _jsxRuntime.jsx)("path", {
+  d: "M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"
+}), 'LocationCity');
+
+exports["default"] = _default;
+
+/***/ }),
+
 /***/ "./node_modules/@mui/icons-material/Visibility.js":
 /*!********************************************************!*\
   !*** ./node_modules/@mui/icons-material/Visibility.js ***!
@@ -23635,9 +23723,9 @@ var SideMenuItem = function SideMenuItem(_ref) {
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
   var active = location.pathname === data.route;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "".concat(active ? "bg-gray-100" : "bg-white", " rounded-l-full px-20 py-5 cursor-pointer"),
+    className: "".concat(active ? "bg-gray-100 text-green-400 font-bold" : "bg-white", " rounded-l-full px-10 gap-5 py-5 cursor-pointer flex "),
     onClick: onClick
-  }, data.name);
+  }, data.icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, data.name));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SideMenuItem);
@@ -23716,7 +23804,14 @@ var Sidebar = function Sidebar() {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "h-screen w-200 flex flex-col bg-white rounded-r-xl pl-5 py-8"
-  }, _static_menu__WEBPACK_IMPORTED_MODULE_1__.SideMenu.map(function (data, idx) {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "pr-5 mb-10"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+    className: "text-4xl text-green-300 font-bold text-center mb-3"
+  }, "Centr(ar)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/assets/images/woman.png",
+    className: "w-60 mr-5"
+  })), _static_menu__WEBPACK_IMPORTED_MODULE_1__.SideMenu.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_menuitem__WEBPACK_IMPORTED_MODULE_2__["default"], {
       data: data,
       onClick: function onClick() {
@@ -23943,7 +24038,7 @@ function CityPage() {
     getData();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full w-full m-auto py-10"
+    className: "w-full h-screen py-10 px-10 overflow-y-scroll "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -24237,7 +24332,7 @@ function CoursePage() {
     className: "h-14 w-full",
     onClick: addData
   }, "  + Acrescentar")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "xl:w-1/2 w-full m-auto py-10"
+    className: "w-full h-screen py-10 px-10 overflow-y-scroll "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex gap-5 py-5 justify-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -24420,11 +24515,11 @@ function ManageCoursePage() {
   };
 
   var confirm = function confirm() {
-    navigate("/admin.city");
+    navigate("/admin.course");
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "xl:w-2/3 w-full m-auto py-10"
+    className: "w-full h-screen py-2 px-10 overflow-y-scroll "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid lg:grid-cols-2 grid-cols-1 gap-5 bg-white rounded-lg p-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -24769,7 +24864,7 @@ function TypologyPage() {
     getData();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full h-screen m-auto py-10 px-5 overflow-y-scroll "
+    className: "w-full h-screen py-10 px-10 overflow-y-scroll "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -25830,18 +25925,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "SideMenu": () => (/* binding */ SideMenu)
 /* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _mui_icons_material_LocationCity__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/icons-material/LocationCity */ "./node_modules/@mui/icons-material/LocationCity.js");
+/* harmony import */ var _mui_icons_material_GolfCourse__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/icons-material/GolfCourse */ "./node_modules/@mui/icons-material/GolfCourse.js");
+/* harmony import */ var _mui_icons_material_DeviceHub__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @mui/icons-material/DeviceHub */ "./node_modules/@mui/icons-material/DeviceHub.js");
+
+
+
+
 var SideMenu = [{
   id: 0,
   name: "Tipologias",
-  route: "/admin.typology"
+  route: "/admin.typology",
+  icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_LocationCity__WEBPACK_IMPORTED_MODULE_1__["default"], null)
 }, {
   id: 1,
   name: "Cidades",
-  route: "/admin.city"
+  route: "/admin.city",
+  icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_DeviceHub__WEBPACK_IMPORTED_MODULE_2__["default"], null)
 }, {
   id: 3,
   name: "Percursos",
-  route: "/admin.course"
+  route: "/admin.course",
+  icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_icons_material_GolfCourse__WEBPACK_IMPORTED_MODULE_3__["default"], null)
 }];
 
 /***/ }),

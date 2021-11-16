@@ -88,7 +88,7 @@ export default function TypologyPage() {
     }, [])
     return (
         <AdminLayout>
-            <div className={`w-full h-screen m-auto py-10 px-5 overflow-y-scroll `}>
+            <div className={`w-full h-screen py-10 px-10 overflow-y-scroll `}>
                 <div className=" flex gap-5 py-5">
                     <TextField id="outlined-basic" label="Nome da Tipologias" variant="outlined" className="bg-white w-full" value={newData} onChange={handleChange} />
                     <Button variant="contained" color="success" className="h-14 w-40" onClick={() => addData()}>  + Acrescentar</Button>

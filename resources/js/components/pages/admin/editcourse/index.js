@@ -76,12 +76,12 @@ export default function ManageCoursePage() {
 
 
     const confirm = () =>{
-        navigate("/admin.city");
+        navigate("/admin.course");
     }
 
     return (
         <AdminLayout>
-            <div className="xl:w-2/3 w-full m-auto py-10">
+            <div className="w-full h-screen py-2 px-10 overflow-y-scroll ">
                 <div className="grid lg:grid-cols-2 grid-cols-1 gap-5 bg-white rounded-lg p-10">
                     <TextField id="outlined-basic" label="Nome do percurso" variant="outlined" className="bg-white w-full" value={values.courseName} onChange={handleChange} />
                     <Box sx={{ minWidth: 120 }} className="bg-gray-100 rounded-lg">
