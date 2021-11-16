@@ -16,6 +16,8 @@ import PercursoPage from './pages/user/Percurso';
 import TypologyPage from './pages/admin/typology';
 import CityPage from './pages/admin/cities';
 import CoursePage from './pages/admin/course';
+import AdminPage from './pages/admin/home';
+import ManageCoursePage from './pages/admin/editcourse';
 
 function Example() {
 
@@ -26,7 +28,7 @@ function Example() {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="mx-auto">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -35,9 +37,11 @@ function Example() {
           <Route path="/home" element={<HomePage />} />
           <Route path="/percursos" element={<PercursosPage />} />
           <Route path="/percurso" element={<PercursoPage />} />
+          <Route path="/admin.home" element={<AdminPage />} />
           <Route path="/admin.typology" element={<TypologyPage />} />
           <Route path="/admin.city" element={<CityPage />} />
           <Route path="/admin.course" element={<CoursePage />} />
+          <Route path="/admin.course.manage" element={<ManageCoursePage />} />
         </Routes>
       </BrowserRouter>
     </div>

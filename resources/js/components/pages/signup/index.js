@@ -19,15 +19,14 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom'
-
+import {useNavigate} from 'react-router-dom';
 const MySwal = withReactContent(swal)
 
 export default function SignUpPage() {
     const [match, setMatch] = useState(null)
     const [show, setModalShow] = useState(false)
-    const [redirectpage, setRedirect] = useState(null)
-
+    const navigate = useNavigate();
+    
     const [values, setValues] = React.useState({
         firstname: '',
         lastname: '',
@@ -76,13 +75,18 @@ export default function SignUpPage() {
             axios.post("/register", data)
                 .then(
                     response => {
-                        MySwal.fire({
-                            title: <strong>{response.data.result == "success" ? "Success" : "Error!"}</strong>,
-                            html: <i>{response.data.message}</i>,
-                            icon: response.data.result == "success" ? "success" : "error"
-                        }).then(function () {
-                        }, function (dismiss) {
-                        });
+                        if (response.data.result === "success") {
+                            navigate("/signin");
+                        }
+                        else {
+                            MySwal.fire({
+                                title: <strong>{response.data.result == "success" ? "Success" : "Error!"}</strong>,
+                                html: <i>{response.data.message}</i>,
+                                icon: response.data.result == "success" ? "success" : "error"
+                            }).then(function () {
+                            }, function (dismiss) {
+                            });
+                        }
                     }
                 )
                 .catch(error => {

@@ -15,6 +15,8 @@ import Modal from '@mui/material/Modal';
 import axios from 'axios';
 import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
+import {useNavigate} from 'react-router-dom';
+import AdminLayout from '../../../layout/admin.layout';
 const MySwal = withReactContent(swal)
 
 const style = {
@@ -34,11 +36,13 @@ export default function CoursePage() {
     const [city, setCity] = useState("")
     const [description, setDescription] = useState("")
     const [edit, setEdit] = useState(null)
+    const navigate = useNavigate();
+
     const addData = () => {
         handleClose();
         if (city !== "" && city != null && description !== "" && description != null) {
             if(edit!=null){
-                axios.post('/course.update', { id:edit, description: description, city: city })
+                axios.post('/api/course.update', { id:edit, description: description, city: city })
                 .then(
                     response => {
                         console.log(response.data)
@@ -52,7 +56,7 @@ export default function CoursePage() {
                 });
             }
             else{
-            axios.post('/course.create', { description: description, city: city })
+            axios.post('/api/course.create', { description: description, city: city })
                 .then(
                     response => {
                         console.log(response.data)
@@ -75,7 +79,7 @@ export default function CoursePage() {
 
     const getData = () => {
 
-        axios.post("/course.get")
+        axios.post("/api/course.get")
             .then(
                 response => {
                     console.log(response.data)
@@ -89,7 +93,7 @@ export default function CoursePage() {
     }
 
     const deleteTypo = (id) => {
-        axios.post('/course.delete', { id: id })
+        axios.post('/api/course.delete', { id: id })
             .then(
                 response => {
                     console.log(response.data.result)
@@ -129,18 +133,19 @@ export default function CoursePage() {
     };
 
     const editCourse = (course) => {
-        setEdit(course.id)
-        setDescription(course.description)
-        setCity(course.city)
-        console.log(course.description)
-        handleOpen();
+        navigate("/admin.course.manage")
+        // setEdit(course.id)
+        // setDescription(course.description)
+        // setCity(course.city)
+        // console.log(course.description)
+        // handleOpen();
     }
 
     React.useEffect(() => {
         getData();
     }, [])
     return (
-        <Layout>
+        <AdminLayout>
             <Modal
                 open={open}
                 onClose={handleClose}
@@ -194,6 +199,6 @@ export default function CoursePage() {
                     </Table>
                 </TableContainer>
             </div>
-        </Layout>
+        </AdminLayout>
     );
 }

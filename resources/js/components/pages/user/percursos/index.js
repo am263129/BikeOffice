@@ -8,8 +8,15 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
+import {useNavigate} from 'react-router-dom';
+
 
 export default function PercursosPage() {
+    const navigate = useNavigate();
+    const handleSelect = () => {
+        navigate("/percurso");
+    }
+
 
     const TablistItem = ({ data }) => {
         return (
@@ -20,13 +27,14 @@ export default function PercursosPage() {
         )
     }
 
+
     return (
         <Layout>
             <div className="p-5 text-black bg-white rounded-lg">
                 <h4 className="text-xl my-5">Resultados</h4>
                 <h5 className="text-lg mt-3">Parabens! Temos 3 sugestoes para si em <span className="text-primary">Estarreja!</span></h5>
-                <div className="flex flex-between gap-5 ">
-                    <div className="bg-primary rounded-xl w-1/3 p-4">
+                <div className="flex flex-between gap-5 " >
+                    <div className="bg-primary rounded-xl w-1/3 p-4 cursor-pointer" onClick={handleSelect} >
                         <div className="flex gap-4 items-center">
                             <img src="/assets/images/ico_tab2.png" className="w-32" />
                             <h3 className="text-4xl text-white font-bold">Persurso 1</h3>
@@ -49,7 +57,7 @@ export default function PercursosPage() {
                             <img src="/assets/images/ico_hand.png" className="w-16" />
                         </div>
                     </div>
-                    <div className="bg-green-600 rounded-xl w-1/3 p-4">
+                    <div className="bg-green-600 rounded-xl w-1/3 p-4 cursor-pointer" onClick={handleSelect}>
                         <div className="flex gap-4 items-center">
                             <img src="/assets/images/ico_tab.png" className="w-32" />
                             <h3 className="text-4xl text-white font-bold">Persurso 2</h3>
@@ -73,7 +81,7 @@ export default function PercursosPage() {
                         </div>
 
                     </div>
-                    <div className="bg-green-900 rounded-xl w-1/3 p-4">
+                    <div className="bg-green-900 rounded-xl w-1/3 p-4 cursor-pointer" onClick={handleSelect}>
                         <div className="flex gap-4 items-center">
                             <img src="/assets/images/ico_tab.png" className="w-32" />
                             <h3 className="text-4xl text-white font-bold">Persurso 3</h3>

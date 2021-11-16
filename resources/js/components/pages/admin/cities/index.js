@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
+import AdminLayout from '../../../layout/admin.layout';
 const MySwal = withReactContent(swal)
 
 export default function CityPage() {
@@ -20,7 +21,7 @@ export default function CityPage() {
 
     const addData = () => {
         if (newData !== "" && newData != null)
-            axios.post('/city.create', { data: newData })
+            axios.post('/api/city.create', { data: newData })
                 .then(
                     response => {
                         console.log(response.data)
@@ -41,7 +42,7 @@ export default function CityPage() {
 
     const getData = () => {
 
-        axios.post("/city.get")
+        axios.post("/api/city.get")
             .then(
                 response => {
                     console.log(response.data)
@@ -55,7 +56,7 @@ export default function CityPage() {
     }
 
     const deleteTypo = (id) => {
-        axios.post('/city.delete', { id: id })
+        axios.post('/api/city.delete', { id: id })
             .then(
                 response => {
                     console.log(response.data.result)
@@ -86,8 +87,8 @@ export default function CityPage() {
         getData();
     }, [])
     return (
-        <Layout>
-            <div className="xl:w-1/2 w-full m-auto py-10">
+        <AdminLayout>
+            <div className="w-full w-full m-auto py-10">
                 <div className=" flex gap-5 py-5">
                     <TextField id="outlined-basic" label="Nome da Tipologias" variant="outlined" className="bg-white w-full" value={newData} onChange={handleChange} />
                     <Button variant="contained" color="success" className="h-14 w-40" onClick={() => addData()}>  + Acrescentar</Button>
@@ -118,6 +119,6 @@ export default function CityPage() {
                     </Table>
                 </TableContainer>
             </div>
-        </Layout>
+        </AdminLayout>
     );
 }

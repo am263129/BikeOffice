@@ -50,9 +50,16 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect()->route('home');
-        } else
-            return redirect('signin')->with('message', 'Login details are not valid');
+        $result = Auth::attempt($credentials);
+        if ($result) {
+            $user = auth()->user();
+            $response['token'] =  $user->createToken('Laravel')->accessToken;
+            $response['result'] = 'success';
+            $response['message'] = 'login success';
+        } else{
+            $response['result'] = 'error';
+            $response['message'] = 'login failed';
+        }
+        return response()->json($response);
     }
 }

@@ -7,9 +7,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
-
+import {useNavigate} from 'react-router-dom';
 export default function HomePage() {
-
+    const navigate = useNavigate();
     const [values, setValues] = React.useState({
         age:"",
         disease: '',
@@ -32,6 +32,10 @@ export default function HomePage() {
     const handleMouseDownPassword = (event) => {
         event.preventDefault();
     };
+
+    const handleCofirm = () =>{
+        navigate("/percursos");
+    }
 
 
     return (
@@ -77,15 +81,15 @@ export default function HomePage() {
                                     label="Selecione a cidade"
                                     onChange={handleChange}
                                 >
-                                    <MenuItem value={1}>Tipo 1</MenuItem>
-                                    <MenuItem value={2}>Tipo 2</MenuItem>
-                                    <MenuItem value={3}>Tipo 3</MenuItem>
+                                    <MenuItem value={1}>City 1</MenuItem>
+                                    <MenuItem value={2}>City 2</MenuItem>
+                                    <MenuItem value={3}>City 3</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
                     </div>
                 </div>
-
+{/* 
                 <div className="flex gap-5 mt-5">
                     <div className="w-full">
                         <InputLabel htmlFor="outlined-adornment-confirmpassword" className="mb-3">Distancia pretendida</InputLabel>
@@ -106,7 +110,7 @@ export default function HomePage() {
                             </FormControl>
                         </Box>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="flex gap-5 mt-5">
                     <div className="w-full">
@@ -117,12 +121,12 @@ export default function HomePage() {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    defaultValue = {1}
+                                    defaultValue = {true}
                                     label="Selecione tipo de percurso"
                                     onChange={handleChange}
                                 >
-                                    <MenuItem value={true}>single</MenuItem>
-                                    <MenuItem value={false}>return</MenuItem>
+                                    <MenuItem value={true}>Único</MenuItem>
+                                    <MenuItem value={false}>Ida e volta</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
@@ -130,7 +134,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="min-w-100  mt-5">
-                    <Button variant="contained" color="success" className="h-14 w-60 rounded-lg">Avancar</Button>
+                    <Button variant="contained" color="success" className="h-14 w-60 rounded-lg" onClick={()=>handleCofirm()}>Avancar</Button>
                 </div>
             </div>
         </Layout>

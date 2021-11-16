@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import axios from 'axios';
 import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
+import AdminLayout from '../../../layout/admin.layout';
 const MySwal = withReactContent(swal)
 
 export default function TypologyPage() {
@@ -20,7 +21,7 @@ export default function TypologyPage() {
 
     const addData = () => {
         if (newData !== "" && newData != null)
-            axios.post('/typo.create', { data: newData })
+            axios.post('/api/typo.create', { data: newData })
                 .then(
                     response => {
                         console.log(response.data)
@@ -41,7 +42,7 @@ export default function TypologyPage() {
 
     const getData = () => {
 
-        axios.post("/typo.get")
+        axios.post("/api/typo.get")
             .then(
                 response => {
                     console.log(response.data)
@@ -55,7 +56,7 @@ export default function TypologyPage() {
     }
 
     const deleteTypo = (id) => {
-        axios.post('/typo.delete', { id: id })
+        axios.post('/api/typo.delete', { id: id })
             .then(
                 response => {
                     console.log(response.data.result)
@@ -86,8 +87,8 @@ export default function TypologyPage() {
         getData();
     }, [])
     return (
-        <Layout>
-            <div className="xl:w-1/2 w-full m-auto py-10">
+        <AdminLayout>
+            <div className={`w-full h-screen m-auto py-10 px-5 overflow-y-scroll `}>
                 <div className=" flex gap-5 py-5">
                     <TextField id="outlined-basic" label="Nome da Tipologias" variant="outlined" className="bg-white w-full" value={newData} onChange={handleChange} />
                     <Button variant="contained" color="success" className="h-14 w-40" onClick={() => addData()}>  + Acrescentar</Button>
@@ -118,6 +119,6 @@ export default function TypologyPage() {
                     </Table>
                 </TableContainer>
             </div>
-        </Layout>
+        </AdminLayout>
     );
 }

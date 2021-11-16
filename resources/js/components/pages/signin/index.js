@@ -15,13 +15,15 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 
 const MySwal = withReactContent(swal)
-export default function SigninPage() {
+export default function SigninPage({props}) {
+    console.log(props)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [showpassword, setShowpass] = useState(null)
+    const navigate = useNavigate();
     const handleEmailchange = (event) => {
         setEmail(event.target.value)
     }
@@ -53,10 +55,12 @@ export default function SigninPage() {
                 email: email,
                 password: password
             };
-            axios.post("/signin", data)
+            axios.post("/api/signin", data)
                 .then(
                     response => {
-                        console.log(response.data)
+                        navigate("/home");
+                        // console.log(response.data.token)
+                        // props.history.push('/home')
                         // MySwal.fire({
                         //     title: <strong>{response.data.result == "success" ? "Success" : "Error!"}</strong>,
                         //     html: <i>{response.data.message}</i>,
@@ -74,7 +78,7 @@ export default function SigninPage() {
     }
     return (
         <Layout>
-            <div className="w-1/2 my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg">
+            <div className="xl:w-1/3 md:w-1/2 w-full my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg">
                 <TextField id="outlined-basic" label="Email" variant="outlined" onChange={handleEmailchange} />
                 <FormControl sx={{ width: '100%' }} variant="outlined" className="w-full" color="success">
                     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
