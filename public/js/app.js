@@ -24274,6 +24274,12 @@ function CoursePage() {
     setDescription(event.target.value);
   };
 
+  var handleAdd = function handleAdd() {
+    navigate("/admin.course.manage", {
+      edit: false
+    });
+  };
+
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState(false),
       _React$useState2 = _slicedToArray(_React$useState, 2),
       open = _React$useState2[0],
@@ -24289,7 +24295,9 @@ function CoursePage() {
   };
 
   var editCourse = function editCourse(course) {
-    navigate("/admin.course.manage"); // setEdit(course.id)
+    navigate("/admin.course.manage", {
+      edit: true
+    }); // setEdit(course.id)
     // setDescription(course.description)
     // setCity(course.city)
     // console.log(course.description)
@@ -24339,7 +24347,7 @@ function CoursePage() {
     variant: "contained",
     color: "success",
     className: "h-14 w-40",
-    onClick: handleOpen
+    onClick: handleAdd
   }, "  + Acrescentar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
     component: _mui_material_Paper__WEBPACK_IMPORTED_MODULE_12__["default"]
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Table__WEBPACK_IMPORTED_MODULE_13__["default"], {
@@ -24456,8 +24464,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var MySwal = sweetalert2_react_content__WEBPACK_IMPORTED_MODULE_3___default()((sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()));
-function ManageCoursePage() {
+function ManageCoursePage(props) {
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)();
+  console.log(location.edit);
+  console.log(props);
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       cities = _useState2[0],
@@ -24472,13 +24485,11 @@ function ManageCoursePage() {
 
   var getData = function getData() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/city.get").then(function (response) {
-      console.log(response.data);
       setCities(response.data);
     })["catch"](function (error) {
       console.log("ERROR:: ", error.response.data);
     });
     axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/typo.get").then(function (response) {
-      console.log(response.data);
       setTypos(response.data);
     })["catch"](function (error) {
       console.log("ERROR:: ", error.response.data);
@@ -24566,7 +24577,8 @@ function ManageCoursePage() {
     onChange: handleChange
   }, cities.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      value: data.id
+      value: data.id,
+      key: idx
     }, data.name);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
@@ -24601,7 +24613,8 @@ function ManageCoursePage() {
     onChange: handleChange
   }, typos.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
-      value: data.id
+      value: data.id,
+      key: idx
     }, data.name);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
     id: "outlined-basic",

@@ -19,9 +19,13 @@ import withReactContent from 'sweetalert2-react-content'
 import swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom';
 import AdminLayout from '../../../layout/admin.layout';
+import { useLocation } from "react-router-dom";
 const MySwal = withReactContent(swal)
 
-export default function ManageCoursePage() {
+export default function ManageCoursePage(props) {
+    const location = useLocation();
+    console.log(location.edit)
+    console.log(props)
     const [cities, setCities] = useState([])
     const [typos, setTypos] = useState([])
     const navigate = useNavigate();
@@ -30,7 +34,6 @@ export default function ManageCoursePage() {
         axios.post("/api/city.get")
             .then(
                 response => {
-                    console.log(response.data)
                     setCities(response.data)
                 }
             )
@@ -40,7 +43,6 @@ export default function ManageCoursePage() {
         axios.post("/api/typo.get")
             .then(
                 response => {
-                    console.log(response.data)
                     setTypos(response.data)
                 }
             )
@@ -111,7 +113,7 @@ export default function ManageCoursePage() {
                                 onChange={handleChange}
                             >
                                 {cities.map((data, idx) => (
-                                    <MenuItem value={data.id}>{data.name}</MenuItem>
+                                    <MenuItem value={data.id} key={idx}>{data.name}</MenuItem>
                                 ))}
 
                             </Select>
@@ -132,7 +134,7 @@ export default function ManageCoursePage() {
                                 onChange={handleChange}
                             >
                                 {typos.map((data, idx) => (
-                                    <MenuItem value={data.id}>{data.name}</MenuItem>
+                                    <MenuItem value={data.id} key={idx}>{data.name}</MenuItem>
                                 ))}
                             </Select>
                         </FormControl>

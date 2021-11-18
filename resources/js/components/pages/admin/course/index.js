@@ -125,6 +125,11 @@ export default function CoursePage() {
     }
 
 
+    const handleAdd = () =>{
+        navigate("/admin.course.manage",{edit:false})
+    }
+
+
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
@@ -133,7 +138,7 @@ export default function CoursePage() {
     };
 
     const editCourse = (course) => {
-        navigate("/admin.course.manage")
+        navigate("/admin.course.manage",{edit:true})
         // setEdit(course.id)
         // setDescription(course.description)
         // setCity(course.city)
@@ -163,7 +168,7 @@ export default function CoursePage() {
 
             <div className="w-full h-screen py-10 px-10 overflow-y-scroll " >
                 <div className=" flex gap-5 py-5 justify-end">
-                    <Button variant="contained" color="success" className="h-14 w-40" onClick={handleOpen}>  + Acrescentar</Button>
+                    <Button variant="contained" color="success" className="h-14 w-40" onClick={handleAdd}>  + Acrescentar</Button>
                 </div>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 500 }} aria-label="simple table">
