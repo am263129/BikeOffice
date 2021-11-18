@@ -4,7 +4,6 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  useParams,
   Link,
   Outlet
 } from 'react-router-dom';
@@ -29,7 +28,6 @@ function Example() {
     setAge(event.target.value);
   };
 
-  let { answer } = useParams()
 
   return (
     <div className="mx-auto">

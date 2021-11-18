@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import Layout from "../../../layout/layout";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -8,25 +8,23 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import { useNavigate, useLocation } from "react-router-dom";
 import TestResult from "../../../components/testresult";
+import axios from "axios";
+
 export default function HomePage({ route, navigation }) {
-    // const { answer } = route.params;
-    // const {
-    //     answer,
-    // } = useRoutes().params
+    const [cities, setCities] = useState([]);
+    const [graus, setGarus] = useState([]);
 
     let answer = 0;
     let location = useLocation();
-    if (location.state.answer !== undefined) answer = location.state.answer;
+    if (location.state !== null && location.state.answer !== undefined)
+        answer = location.state.answer;
     const navigate = useNavigate();
-    const [values, setValues] = React.useState({
-        age: "",
-        disease: "",
-        targetplace: "",
-        distance: "",
-        single: true,
-    });
+    const [selectedGraus, setSelectedGraus] = useState();
+    const [selectedCity, setSelectedCity] = useState();
+    const [selectedType, setSelectedType] = useState();
 
     const handleChange = (prop) => (event) => {
+        console.log(event.target.value);
         setValues({ ...values, [prop]: event.target.value });
     };
 
@@ -42,13 +40,43 @@ export default function HomePage({ route, navigation }) {
     };
 
     const handleCofirm = () => {
-        navigate("/percursos");
+        navigate("/percursos", {
+            state: {
+                graus: selectedGraus,
+                city: selectedCity,
+                type: selectedType,
+            },
+        });
     };
 
     const handleTest = () => {
         navigate("/test");
     };
 
+    const getData = () => {
+        axios
+            .post("/api/city.get")
+            .then((response) => {
+                console.log(response.data);
+                setCities(response.data);
+            })
+            .catch((error) => {
+                console.log("ERROR:: ", error.response.data);
+            });
+        axios
+            .post("/api/typo.get")
+            .then((response) => {
+                console.log(response.data);
+                setGarus(response.data);
+            })
+            .catch((error) => {
+                console.log("ERROR:: ", error.response.data);
+            });
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
     return (
         <Layout>
             <div className="p-5 text-black bg-white rounded-lg">
@@ -60,36 +88,40 @@ export default function HomePage({ route, navigation }) {
                 <div className="flex gap-5 mt-5">
                     <div className="flex gap-5 w-full items-end">
                         <div className="w-1/2">
-                        <InputLabel
-                            htmlFor="outlined-adornment-confirmpassword"
-                            className="mb-3"
-                        >
-                            Tipologia de doenca
-                        </InputLabel>
-                        <Box
-                            sx={{ minWidth: 120 }}
-                            className="bg-gray-100 rounded-lg"
-                        >
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">
-                                    Selecione qual o tipo
-                                </InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    defaultValue={1}
-                                    label="Selecione qual o tipo"
-                                    onChange={handleChange}
-                                >
-                                    <MenuItem value={1}>Tipo 1</MenuItem>
-                                    <MenuItem value={2}>Tipo 2</MenuItem>
-                                    <MenuItem value={3}>Tipo 3</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box>
+                            <InputLabel
+                                htmlFor="outlined-adornment-confirmpassword"
+                                className="mb-3"
+                            >
+                                Tipologia de doenca
+                            </InputLabel>
+                            <Box
+                                sx={{ minWidth: 120 }}
+                                className="bg-gray-100 rounded-lg"
+                            >
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                        Selecione qual o tipo
+                                    </InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        defaultValue={1}
+                                        label="Selecione qual o tipo"
+                                        onChange={(e) => {
+                                            setSelectedGraus(e.target.value);
+                                        }}
+                                    >
+                                        {graus.map((data, idx) => (
+                                            <MenuItem value={data.id} key={idx}>
+                                                {data.name}
+                                            </MenuItem>
+                                        ))}
+                                    </Select>
+                                </FormControl>
+                            </Box>
                         </div>
                         <div>
-                            {answer!==0&&<TestResult answer={answer}/>}
+                            {answer !== 0 && <TestResult answer={answer} />}
                         </div>
                     </div>
                     <div className="min-w-100">
@@ -130,39 +162,20 @@ export default function HomePage({ route, navigation }) {
                                     id="demo-simple-select"
                                     defaultValue={1}
                                     label="Selecione a cidade"
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        setSelectedCity(e.target.value);
+                                    }}
                                 >
-                                    <MenuItem value={1}>City 1</MenuItem>
-                                    <MenuItem value={2}>City 2</MenuItem>
-                                    <MenuItem value={3}>City 3</MenuItem>
+                                    {cities.map((data, idx) => (
+                                        <MenuItem value={data.id} key={idx}>
+                                            {data.name}
+                                        </MenuItem>
+                                    ))}
                                 </Select>
                             </FormControl>
                         </Box>
                     </div>
                 </div>
-                {/* 
-                <div className="flex gap-5 mt-5">
-                    <div className="w-full">
-                        <InputLabel htmlFor="outlined-adornment-confirmpassword" className="mb-3">Distancia pretendida</InputLabel>
-                        <Box sx={{ minWidth: 120 }} className="bg-gray-100 rounded-lg">
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Selecione a distancia</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    defaultValue = {1}
-                                    label="Selecione a distancia"
-                                    onChange={handleChange}
-                                >
-                                    <MenuItem value={1}>Tipo 1</MenuItem>
-                                    <MenuItem value={2}>Tipo 2</MenuItem>
-                                    <MenuItem value={3}>Tipo 3</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box>
-                    </div>
-                </div> */}
-
                 <div className="flex gap-5 mt-5">
                     <div className="w-full">
                         <InputLabel
@@ -184,7 +197,9 @@ export default function HomePage({ route, navigation }) {
                                     id="demo-simple-select"
                                     defaultValue={true}
                                     label="Selecione tipo de percurso"
-                                    onChange={handleChange}
+                                    onChange={(e) => {
+                                        setSelectedType(e.target.value);
+                                    }}
                                 >
                                     <MenuItem value={true}>Único</MenuItem>
                                     <MenuItem value={false}>

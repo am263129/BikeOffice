@@ -20,6 +20,11 @@ class CourseController extends Controller
 
     public function getCourse(Request $ruquest)
     {
+        $graus = $request->has("graus")?$request->get("graus"):"";
+        $city = $request->has("city")?$request->get('city'):"";
+        $type = $request->has("type")?$requset->get('type'):"";
+
+        //do serach option
         $result = Course::select()->get();
         return response()->json($result);
     }

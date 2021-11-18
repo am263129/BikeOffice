@@ -89,7 +89,7 @@ const TestPage = () => {
     };
     return (
         <Layout>
-            <div className="bg-dark-primary flex justify-center relative bg-gray-600 rounded-lg p-5 relative">
+            <div className="flex justify-center relative rounded-lg p-5 relative">
                 <BackButton />
                 <div className="flex justify-center items-center flex-col gap-10">
                     <h3 className="text-3xl font-bold text-center text-white">
