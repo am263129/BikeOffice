@@ -23723,12 +23723,37 @@ var SideMenuItem = function SideMenuItem(_ref) {
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useLocation)();
   var active = location.pathname === data.route;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "".concat(active ? "bg-gray-100 text-green-400 font-bold" : "bg-white", " rounded-l-full px-10 gap-5 py-5 cursor-pointer flex "),
+    className: "".concat(active ? "bg-green-100 text-green-400 font-bold" : "bg-white", " rounded-l-full px-10 gap-5 py-5 cursor-pointer flex "),
     onClick: onClick
   }, data.icon, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, data.name));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SideMenuItem);
+
+/***/ }),
+
+/***/ "./resources/js/components/components/navbar/index.js":
+/*!************************************************************!*\
+  !*** ./resources/js/components/components/navbar/index.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var NavBar = function NavBar() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/assets/images/top_image.png",
+    className: "w-full"
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (NavBar);
 
 /***/ }),
 
@@ -23838,8 +23863,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ AdminLayout)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/sidebar */ "./resources/js/components/components/sidebar/index.js");
-/* harmony import */ var _layout_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layout.scss */ "./resources/js/components/layout/layout.scss");
+/* harmony import */ var _components_navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/navbar */ "./resources/js/components/components/navbar/index.js");
+/* harmony import */ var _components_sidebar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/sidebar */ "./resources/js/components/components/sidebar/index.js");
+/* harmony import */ var _layout_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout.scss */ "./resources/js/components/layout/layout.scss");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -23855,6 +23881,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function AdminLayout(_ref) {
   var children = _ref.children;
 
@@ -23864,10 +23891,12 @@ function AdminLayout(_ref) {
       setActive = _useState2[1];
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "bg-gray-100 rounded-lg flex gap-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
+    className: "bg-green-100 rounded-lg flex gap-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex flex-col gap-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_navbar__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", {
     className: "w-full bg-white rounded-l-xl"
-  }, children));
+  }, children)));
 }
 
 /***/ }),
@@ -23890,7 +23919,9 @@ __webpack_require__.r(__webpack_exports__);
 function Layout(_ref) {
   var children = _ref.children;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "bg-gray-100 rounded-lg p-5"
+    className: "bg-gray-800 rounded-lg p-5 justify-center flex"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "layout-container gap-5 flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "layout-header"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -23899,7 +23930,7 @@ function Layout(_ref) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/woman.png",
     className: "m-auto"
-  }));
+  })));
 }
 
 /***/ }),
@@ -24038,7 +24069,7 @@ function CityPage() {
     getData();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full h-screen py-10 px-10 overflow-y-scroll "
+    className: "w-full py-10 px-10 overflow-auto "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -24340,7 +24371,7 @@ function CoursePage() {
     className: "h-14 w-full",
     onClick: addData
   }, "  + Acrescentar")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full h-screen py-10 px-10 overflow-y-scroll "
+    className: "w-full py-10 px-10 overflow-auto "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex gap-5 py-5 justify-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -24542,7 +24573,7 @@ function ManageCoursePage(props) {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full h-screen py-2 px-10 overflow-y-scroll "
+    className: "w-full py-2 px-10 "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid lg:grid-cols-2 grid-cols-1 gap-5 bg-white rounded-lg p-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -24903,7 +24934,7 @@ function TypologyPage() {
     getData();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full h-screen py-10 px-10 overflow-y-scroll "
+    className: "w-full py-10 px-10 overflow-auto "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -30429,7 +30460,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".layout-header {\n  background-image: url(\"/assets/images/top_image.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".layout-container {\n  max-width: 1600px;\n}\n.layout-container .layout-header {\n  background-image: url(\"/assets/images/top_image.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

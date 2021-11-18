@@ -166,7 +166,7 @@ export default function CoursePage() {
                 </Box>
             </Modal>
 
-            <div className="w-full h-screen py-10 px-10 overflow-y-scroll " >
+            <div className="w-full py-10 px-10 overflow-auto " >
                 <div className=" flex gap-5 py-5 justify-end">
                     <Button variant="contained" color="success" className="h-14 w-40" onClick={handleAdd}>  + Acrescentar</Button>
                 </div>

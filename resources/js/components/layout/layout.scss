@@ -1,5 +1,8 @@
-.layout-header{
-    background-image: url("/assets/images/top_image.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+.layout-container {
+    max-width: 1600px;
+    .layout-header {
+        background-image: url("/assets/images/top_image.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
