@@ -4,6 +4,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
+  useParams,
   Link,
   Outlet
 } from 'react-router-dom';
@@ -18,6 +19,7 @@ import CityPage from './pages/admin/cities';
 import CoursePage from './pages/admin/course';
 import AdminPage from './pages/admin/home';
 import ManageCoursePage from './pages/admin/editcourse';
+import TestPage from './pages/user/test';
 
 function Example() {
 
@@ -27,6 +29,8 @@ function Example() {
     setAge(event.target.value);
   };
 
+  let { answer } = useParams()
+
   return (
     <div className="mx-auto">
       <BrowserRouter>
@@ -35,6 +39,7 @@ function Example() {
           <Route path="/signin" element={<SigninPage />} />
           <Route path="/signup" element={<SignUpPage />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/test" element={<TestPage />} />
           <Route path="/percursos" element={<PercursosPage />} />
           <Route path="/percurso" element={<PercursoPage />} />
           <Route path="/admin.home" element={<AdminPage />} />

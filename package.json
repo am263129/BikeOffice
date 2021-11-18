@@ -31,6 +31,7 @@
         "@emotion/styled": "^11.3.0",
         "@mui/icons-material": "^5.1.0",
         "@mui/material": "^5.1.0",
+        "react-circular-progressbar": "^2.0.4",
         "react-router-dom": "^6.0.2",
         "sweetalert2": "^11.1.10",
         "sweetalert2-react": "^0.8.3",

@@ -9,6 +9,7 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
 import PrimaryButton from '../../../components/primarybtn';
+import BackButton from '../../../components/backbutton';
 
 export default function PercursoPage() {
 
@@ -16,8 +17,9 @@ export default function PercursoPage() {
 
     return (
         <Layout>
-            <div className="p-5 text-black bg-white rounded-lg">
-                <h4 className="text-xl my-5">Resultado</h4>
+            <div className="p-5 text-black bg-white rounded-lg relative">
+                <BackButton />
+                <h4 className="text-xl my-10">Resultado</h4>
                 <div className="flex justify-between">
                     <h5 className="text-lg mt-3"><span className="text-primary">Percurso escolhido!</span>Veja o resumo do percurso: </h5>
                     <div className="flex justiry-around gap-5 ">

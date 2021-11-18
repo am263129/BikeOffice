@@ -9,6 +9,7 @@ import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import TouchAppIcon from '@mui/icons-material/TouchApp';
 import {useNavigate} from 'react-router-dom';
+import BackButton from '../../../components/backbutton';
 
 
 export default function PercursosPage() {
@@ -30,8 +31,9 @@ export default function PercursosPage() {
 
     return (
         <Layout>
-            <div className="p-5 text-black bg-white rounded-lg">
+            <div className="p-5 text-black bg-white rounded-lg relative">
                 <h4 className="text-xl my-5">Resultados</h4>
+                <BackButton />
                 <h5 className="text-lg mt-3">Parabens! Temos 3 sugestoes para si em <span className="text-primary">Estarreja!</span></h5>
                 <div className="flex flex-between gap-5 " >
                     <div className="bg-primary rounded-xl w-1/3 p-4 cursor-pointer" onClick={handleSelect} >
