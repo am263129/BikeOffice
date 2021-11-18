@@ -34,7 +34,7 @@ export default function CityPage() {
         else {
             MySwal.fire({
                 title: <strong>Error !</strong>,
-                html: <i>Please input typology</i>,
+                html: <i>Please input Cidade</i>,
                 icon: "info"
             })
         }
@@ -90,14 +90,14 @@ export default function CityPage() {
         <AdminLayout>
             <div className="w-full h-screen py-10 px-10 overflow-y-scroll ">
                 <div className=" flex gap-5 py-5">
-                    <TextField id="outlined-basic" label="Nome da Tipologias" variant="outlined" className="bg-white w-full" value={newData} onChange={handleChange} />
+                    <TextField id="outlined-basic" label="Nome da Cidade" variant="outlined" className="bg-white w-full" value={newData} onChange={handleChange} />
                     <Button variant="contained" color="success" className="h-14 w-40" onClick={() => addData()}>  + Acrescentar</Button>
                 </div>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 500 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>Tipologias</TableCell>
+                                <TableCell>Cidade</TableCell>
                                 <TableCell align="right">Apagar</TableCell>
                             </TableRow>
                         </TableHead>

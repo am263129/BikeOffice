@@ -23992,7 +23992,7 @@ function CityPage() {
     });else {
       MySwal.fire({
         title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error !"),
-        html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Please input typology"),
+        html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Please input Cidade"),
         icon: "info"
       });
     }
@@ -24043,7 +24043,7 @@ function CityPage() {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
-    label: "Nome da Tipologias",
+    label: "Nome da Cidade",
     variant: "outlined",
     className: "bg-white w-full",
     value: newData,
@@ -24062,7 +24062,7 @@ function CityPage() {
       minWidth: 500
     },
     "aria-label": "simple table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_11__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_12__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], null, "Tipologias"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_11__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_12__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], null, "Cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], {
     align: "right"
   }, "Apagar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableBody__WEBPACK_IMPORTED_MODULE_14__["default"], null, cities.map(function (row, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -24355,7 +24355,19 @@ function CoursePage() {
       minWidth: 500
     },
     "aria-label": "simple table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_14__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_15__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], null, "Descri\xE7\xE3o"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], null, "Cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_14__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_15__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], null, "Percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], null, "Cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    align: "right"
+  }, "Grau"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    align: "right"
+  }, "Tipo percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    align: "right"
+  }, "Dist\xE2ncia total"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    align: "right"
+  }, "Declive m\xE9dio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    align: "right"
+  }, "Zonas de descanso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    align: "right"
+  }, "Voltas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
     align: "right"
   }, "Editar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
     align: "right"
@@ -24605,11 +24617,11 @@ function ManageCoursePage(props) {
     fullWidth: true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_10__["default"], {
     id: "demo-simple-select-label"
-  }, "Tipologias acess\xEDveis"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, "Graus de doen\xE7a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: 1,
-    label: "Tipologias acess\xEDveis",
+    label: "Graus de doen\xE7a",
     onChange: handleChange
   }, typos.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -24654,6 +24666,20 @@ function ManageCoursePage(props) {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
     id: "outlined-basic",
     label: "Upload de pdf para impress\xE3o",
+    variant: "outlined",
+    className: "bg-white w-full",
+    value: values.pdf,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "outlined-basic",
+    label: "Distancia Total",
+    variant: "outlined",
+    className: "bg-white w-full",
+    value: values.pdf,
+    onChange: handleChange
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    id: "outlined-basic",
+    label: "Voltas",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.pdf,
@@ -24831,7 +24857,7 @@ function TypologyPage() {
     });else {
       MySwal.fire({
         title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error !"),
-        html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Please input typology"),
+        html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Please input Graus"),
         icon: "info"
       });
     }
@@ -24882,7 +24908,7 @@ function TypologyPage() {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
-    label: "Nome da Tipologias",
+    label: "Nome do Grau",
     variant: "outlined",
     className: "bg-white w-full",
     value: newData,
@@ -24901,7 +24927,7 @@ function TypologyPage() {
       minWidth: 500
     },
     "aria-label": "simple table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_11__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_12__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], null, "Tipologias"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_11__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_12__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], null, "Graus"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_13__["default"], {
     align: "right"
   }, "Apagar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableBody__WEBPACK_IMPORTED_MODULE_14__["default"], null, typos.map(function (row, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_12__["default"], {

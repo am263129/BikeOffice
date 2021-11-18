@@ -174,8 +174,14 @@ export default function CoursePage() {
                     <Table sx={{ minWidth: 500 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
-                                <TableCell>Descrição</TableCell>
+                                <TableCell>Percurso</TableCell>
                                 <TableCell >Cidade</TableCell>
+                                <TableCell align="right">Grau</TableCell>
+                                <TableCell align="right">Tipo percurso</TableCell>
+                                <TableCell align="right">Distância total</TableCell>
+                                <TableCell align="right">Declive médio</TableCell>
+                                <TableCell align="right">Zonas de descanso</TableCell>
+                                <TableCell align="right">Voltas</TableCell>
                                 <TableCell align="right">Editar</TableCell>
                                 <TableCell align="right">Apagar</TableCell>
                             </TableRow>

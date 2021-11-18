@@ -125,12 +125,12 @@ export default function ManageCoursePage(props) {
                     </div>
                     <Box sx={{ minWidth: 120 }} className="bg-gray-100 rounded-lg">
                         <FormControl fullWidth>
-                            <InputLabel id="demo-simple-select-label">Tipologias acessíveis</InputLabel>
+                            <InputLabel id="demo-simple-select-label">Graus de doença</InputLabel>
                             <Select
                                 labelId="demo-simple-select-label"
                                 id="demo-simple-select"
                                 defaultValue={1}
-                                label="Tipologias acessíveis"
+                                label="Graus de doença"
                                 onChange={handleChange}
                             >
                                 {typos.map((data, idx) => (
@@ -145,6 +145,8 @@ export default function ManageCoursePage(props) {
                     <TextField id="outlined-basic" label="Upload de pgw" variant="outlined" className="bg-white w-full" value={values.pgw} onChange={handleChange} />
                     <TextField id="outlined-basic" label="Zonas de descanso" variant="outlined" className="bg-white w-full" value={values.restZones} onChange={handleChange} />
                     <TextField id="outlined-basic" label="Upload de pdf para impressão" variant="outlined" className="bg-white w-full" value={values.pdf}  onChange={handleChange} />
+                    <TextField id="outlined-basic" label="Distancia Total" variant="outlined" className="bg-white w-full" value={values.pdf}  onChange={handleChange} />
+                    <TextField id="outlined-basic" label="Voltas" variant="outlined" className="bg-white w-full" value={values.pdf}  onChange={handleChange} />
                     <textarea className="px-3 py-3 h-20 border border-gray-300 rounded-md" placeholder="Escreva aqui as indicações do percurso" value={values.description} onChange={handleChange} />
                     <Button variant="contained" color="success" className="h-14 w-40" onClick={() => confirm()}>Confirmar</Button>
                 </div>
