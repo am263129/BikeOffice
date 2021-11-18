@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import Layout from "../../../layout/layout";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -17,39 +17,47 @@ export default function PercursosPage() {
     let city = "";
     let type = true;
     const [courses, setCourses] = useState([]);
-    if (location.state !== null) {
-        if (location.state.graus !== undefined) {
-            graus = location.state.graus;
-        }
-        if (location.state.city !== undefined) {
-            city = location.state.city;
-        }
-        if (location.state.type !== undefined) {
-            type = location.state.type;
-        }
-        getData();
-    }
 
     const getData = () => {
+        console.log("ss");
         axios
-            .post("/api/courses.get", {
+            .post("/api/course.get", {
                 graus: graus,
                 city: city,
                 type: type,
             })
             .then((response) => {
-                console.log(response.data);
-                setCities(response.data);
+                setCourses(response.data);
             })
             .catch((error) => {
                 console.log("ERROR:: ", error.response.data);
             });
     };
+
     // if (location.state.answer !== undefined) answer = location.state.answer;
     const navigate = useNavigate();
-    const handleSelect = () => {
-        navigate("/percurso");
+    const handleSelect = (id) => {
+        navigate("/percurso",{
+            state:{
+                id:id
+            }
+        });
     };
+
+    useEffect(() => {
+        if (location.state !== null) {
+            if (location.state.graus !== undefined) {
+                graus = location.state.graus;
+            }
+            if (location.state.city !== undefined) {
+                city = location.state.city;
+            }
+            if (location.state.type !== undefined) {
+                type = location.state.type;
+            }
+            getData();
+        }
+    }, []);
 
     const TablistItem = ({ data }) => {
         return (
@@ -75,115 +83,48 @@ export default function PercursosPage() {
                     Parabens! Temos 3 sugestoes para si em{" "}
                     <span className="text-primary">Estarreja!</span>
                 </h5>
-                <div className="flex flex-between gap-5 ">
-                    <div
-                        className="bg-primary rounded-xl w-1/3 p-4 cursor-pointer"
-                        onClick={handleSelect}
-                    >
-                        <div className="flex gap-4 items-center">
-                            <img
-                                src="/assets/images/ico_tab2.png"
-                                className="w-32"
-                            />
-                            <h3 className="text-4xl text-white font-bold">
-                                Persurso 1
-                            </h3>
-                        </div>
-                        <div className="flex justify-between">
-                            <div className="flex flex-col">
-                                <TablistItem
-                                    data={{
-                                        title: "Inicio no panta",
-                                        content: "Estadio Municipal",
-                                        type: 0,
-                                    }}
+                <div className="flex flex-between gap-5 grid grid-cols-3 ">
+                    {courses.map((data, idx) => (
+                        <div
+                            className="bg-green-600 rounded-xl p-4 cursor-pointer"
+                            onClick={() => {
+                                handleSelect(data.id);
+                            }}
+                            key={idx}
+                        >
+                            <div className="flex gap-4 items-center">
+                                <img
+                                    src="/assets/images/ico_tab.png"
+                                    className="w-32"
                                 />
-                                <TablistItem
-                                    data={{
-                                        title: "Firm no ponto",
-                                        content: "Auditorio Muncipal",
-                                        type: 0,
-                                    }}
+                                <h3 className="text-4xl text-white font-bold">
+                                    {data.courseName}
+                                </h3>
+                            </div>
+                            <div className="flex justify-between">
+                                <div className="flex flex-col">
+                                    <TablistItem
+                                        data={{
+                                            title: "Inicio no panta",
+                                            content: data.start,
+                                            type: 1,
+                                        }}
+                                    />
+                                    <TablistItem
+                                        data={{
+                                            title: "Firm no ponto",
+                                            content: data.end,
+                                            type: 1,
+                                        }}
+                                    />
+                                </div>
+                                <img
+                                    src="/assets/images/ico_hand.png"
+                                    className="w-16"
                                 />
                             </div>
-                            <img
-                                src="/assets/images/ico_hand.png"
-                                className="w-16"
-                            />
                         </div>
-                    </div>
-                    <div
-                        className="bg-green-600 rounded-xl w-1/3 p-4 cursor-pointer"
-                        onClick={handleSelect}
-                    >
-                        <div className="flex gap-4 items-center">
-                            <img
-                                src="/assets/images/ico_tab.png"
-                                className="w-32"
-                            />
-                            <h3 className="text-4xl text-white font-bold">
-                                Persurso 2
-                            </h3>
-                        </div>
-                        <div className="flex justify-between">
-                            <div className="flex flex-col">
-                                <TablistItem
-                                    data={{
-                                        title: "Inicio no panta",
-                                        content: "Estadio Municipal",
-                                        type: 1,
-                                    }}
-                                />
-                                <TablistItem
-                                    data={{
-                                        title: "Firm no ponto",
-                                        content: "Auditorio Muncipal",
-                                        type: 1,
-                                    }}
-                                />
-                            </div>
-                            <img
-                                src="/assets/images/ico_hand.png"
-                                className="w-16"
-                            />
-                        </div>
-                    </div>
-                    <div
-                        className="bg-green-900 rounded-xl w-1/3 p-4 cursor-pointer"
-                        onClick={handleSelect}
-                    >
-                        <div className="flex gap-4 items-center">
-                            <img
-                                src="/assets/images/ico_tab.png"
-                                className="w-32"
-                            />
-                            <h3 className="text-4xl text-white font-bold">
-                                Persurso 3
-                            </h3>
-                        </div>
-                        <div className="flex justify-between">
-                            <div className="flex flex-col">
-                                <TablistItem
-                                    data={{
-                                        title: "Inicio no panta",
-                                        content: "Estadio Municipal",
-                                        type: 2,
-                                    }}
-                                />
-                                <TablistItem
-                                    data={{
-                                        title: "Firm no ponto",
-                                        content: "Auditorio Muncipal",
-                                        type: 2,
-                                    }}
-                                />
-                            </div>
-                            <img
-                                src="/assets/images/ico_hand.png"
-                                className="w-16"
-                            />
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </Layout>

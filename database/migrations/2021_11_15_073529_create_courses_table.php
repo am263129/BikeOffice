@@ -16,8 +16,21 @@ class CreateCoursesTable extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string("courseName");
+            $table->integer("type");
+            $table->string("city");
+            $table->string("start");
+            $table->string("end");
+            $table->string("graus");
+            $table->string("predominant");
+            $table->string("routeImage");
+            $table->string("avslope");
+            $table->string("pgw");
+            $table->string("restZones");
+            $table->string("pdf");
+            $table->string("distance");
+            $table->string("turns");
             $table->string("description");
-            $table->string('city');
         });
     }
 

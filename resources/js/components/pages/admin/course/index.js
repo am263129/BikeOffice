@@ -177,12 +177,12 @@ export default function CoursePage() {
                                 <TableCell>Percurso</TableCell>
                                 <TableCell >Cidade</TableCell>
                                 <TableCell align="right">Grau</TableCell>
-                                <TableCell align="right">Tipo percurso</TableCell>
-                                <TableCell align="right">Distância total</TableCell>
-                                <TableCell align="right">Declive médio</TableCell>
-                                <TableCell align="right">Zonas de descanso</TableCell>
-                                <TableCell align="right">Voltas</TableCell>
-                                <TableCell align="right">Editar</TableCell>
+                                <TableCell align="center">Tipo percurso</TableCell>
+                                <TableCell align="center">Distância total</TableCell>
+                                <TableCell align="center">Declive médio</TableCell>
+                                <TableCell align="center">Zonas de descanso</TableCell>
+                                <TableCell align="center">Voltas</TableCell>
+                                <TableCell align="center">Editar</TableCell>
                                 <TableCell align="right">Apagar</TableCell>
                             </TableRow>
                         </TableHead>
@@ -193,10 +193,28 @@ export default function CoursePage() {
                                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                 >
                                     <TableCell component="th" scope="row">
-                                        {row.description}
+                                        {row.courseName}
                                     </TableCell>
-                                    <TableCell component="th" scope="row">
+                                    <TableCell component="th" scope="row" align="center">
                                         {row.city}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align="center">
+                                        {row.graus}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align="center">
+                                        {row.type == 1?"Único":"Ida e volta"}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align="center">
+                                        {row.distance}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align="center">
+                                        {row.avslope}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align="center" >
+                                        {row.restZones}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align="center">
+                                        {row.turns}
                                     </TableCell>
                                     <TableCell align="right" component="th" scope="row">
                                         <Button variant="contained" color="info" onClick={() => editCourse(row)}>Editar</Button>

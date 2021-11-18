@@ -10,18 +10,20 @@ class Course extends Model
     use HasFactory;
 
     protected $fillable = [
-        "name",
+        "courseName",
         "type",
         "city",
         "start",
         "end",
-        "typology",
+        "graus",
         "predominant",
-        "image",
+        "routeImage",
         "avslope",
         "pgw",
-        "restzone",
-        "filepdf",
+        "restZones",
+        "pdf",
+        "distance",
+        "turns",
         "description",
     ];
 }

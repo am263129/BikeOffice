@@ -201,8 +201,8 @@ export default function HomePage({ route, navigation }) {
                                         setSelectedType(e.target.value);
                                     }}
                                 >
-                                    <MenuItem value={true}>Único</MenuItem>
-                                    <MenuItem value={false}>
+                                    <MenuItem value={1}>Único</MenuItem>
+                                    <MenuItem value={2}>
                                         Ida e volta
                                     </MenuItem>
                                 </Select>

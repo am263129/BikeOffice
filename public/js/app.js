@@ -23652,6 +23652,49 @@ var BackButton = function BackButton() {
 
 /***/ }),
 
+/***/ "./resources/js/components/components/input/index.js":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/components/input/index.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var CustomInput = function CustomInput(props) {
+  var type = props.type,
+      value = props.value,
+      onChange = props.onChange,
+      className = props.className;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    type: type,
+    value: value,
+    onChange: onChange,
+    className: "bg-white border border-bray-200 border-gray-400 h-12 h-14 p-3 rounded-md w-full ".concat(className)
+  });
+};
+
+CustomInput.propTypes = {
+  type: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  value: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().string),
+  onChange: (prop_types__WEBPACK_IMPORTED_MODULE_1___default().func)
+};
+CustomInput.defaultProps = {
+  type: 'text'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CustomInput);
+
+/***/ }),
+
 /***/ "./resources/js/components/components/menuitem/index.js":
 /*!**************************************************************!*\
   !*** ./resources/js/components/components/menuitem/index.js ***!
@@ -23722,29 +23765,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ PrimaryButton)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-function PrimaryButton(_ref) {
-  var props = _ref.props,
-      click = _ref.click,
-      className = _ref.className;
-
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.selected),
-      _useState2 = _slicedToArray(_useState, 2),
-      selected = _useState2[0],
-      setSelected = _useState2[1];
-
+function PrimaryButton(props) {
+  var selected = props.selected,
+      click = props.click,
+      className = props.className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "text-center cursor-pointer rounded-xl min-w-lg  items-center ".concat(selected ? "bg-primary-dark text-primary" : "bg-primary text-primary-dark", "  ").concat(className, "  px-3 py-2"),
     onClick: click
@@ -24485,17 +24510,17 @@ function CoursePage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableHead__WEBPACK_IMPORTED_MODULE_14__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableRow__WEBPACK_IMPORTED_MODULE_15__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], null, "Percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], null, "Cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
     align: "right"
   }, "Grau"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    align: "right"
+    align: "center"
   }, "Tipo percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    align: "right"
+    align: "center"
   }, "Dist\xE2ncia total"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    align: "right"
+    align: "center"
   }, "Declive m\xE9dio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    align: "right"
+    align: "center"
   }, "Zonas de descanso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    align: "right"
+    align: "center"
   }, "Voltas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
-    align: "right"
+    align: "center"
   }, "Editar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
     align: "right"
   }, "Apagar"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableBody__WEBPACK_IMPORTED_MODULE_17__["default"], null, courses.map(function (row, index) {
@@ -24509,10 +24534,35 @@ function CoursePage() {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
       component: "th",
       scope: "row"
-    }, row.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    }, row.courseName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
       component: "th",
-      scope: "row"
+      scope: "row",
+      align: "center"
     }, row.city), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      component: "th",
+      scope: "row",
+      align: "center"
+    }, row.graus), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      component: "th",
+      scope: "row",
+      align: "center"
+    }, row.type == 1 ? "Único" : "Ida e volta"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      component: "th",
+      scope: "row",
+      align: "center"
+    }, row.distance), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      component: "th",
+      scope: "row",
+      align: "center"
+    }, row.avslope), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      component: "th",
+      scope: "row",
+      align: "center"
+    }, row.restZones), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
+      component: "th",
+      scope: "row",
+      align: "center"
+    }, row.turns), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TableCell__WEBPACK_IMPORTED_MODULE_16__["default"], {
       align: "right",
       component: "th",
       scope: "row"
@@ -24549,21 +24599,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../layout/layout */ "./resources/js/components/layout/layout.js");
-/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
-/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
-/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/FormControl.js");
-/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
-/* harmony import */ var _mui_material_Select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/Select */ "./node_modules/@mui/material/Select/Select.js");
-/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
+/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
+/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/FormControl.js");
+/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
+/* harmony import */ var _mui_material_Select__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @mui/material/Select */ "./node_modules/@mui/material/Select/Select.js");
+/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var sweetalert2_react_content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! sweetalert2-react-content */ "./node_modules/sweetalert2-react-content/dist/sweetalert2-react-content.umd.js");
 /* harmony import */ var sweetalert2_react_content__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(sweetalert2_react_content__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 /* harmony import */ var sweetalert2__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(sweetalert2__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../layout/admin.layout */ "./resources/js/components/layout/admin.layout.js");
+/* harmony import */ var _components_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../components/input */ "./resources/js/components/components/input/index.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -24604,11 +24655,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var MySwal = sweetalert2_react_content__WEBPACK_IMPORTED_MODULE_3___default()((sweetalert2__WEBPACK_IMPORTED_MODULE_4___default()));
 function ManageCoursePage(props) {
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)();
-  console.log(location.edit);
-  console.log(props);
+  var _React$createElement;
+
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useLocation)();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
@@ -24620,7 +24672,7 @@ function ManageCoursePage(props) {
       typos = _useState4[0],
       setTypos = _useState4[1];
 
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_7__.useNavigate)();
 
   var getData = function getData() {
     axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/city.get").then(function (response) {
@@ -24635,28 +24687,30 @@ function ManageCoursePage(props) {
     });
   };
 
-  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     getData();
   }, []);
 
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0__.useState({
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
     courseName: "",
     type: 1,
-    city: '',
-    start: '',
-    end: '',
-    typology: '',
-    predominant: '',
-    routeImage: '',
-    avslope: '',
-    pgw: '',
-    restZones: '',
-    pdf: '',
-    description: ''
+    city: "",
+    start: "",
+    end: "",
+    graus: "",
+    predominant: "",
+    routeImage: null,
+    avslope: "",
+    pgw: null,
+    restZones: "",
+    pdf: null,
+    distance: "",
+    turns: "",
+    description: ""
   }),
-      _React$useState2 = _slicedToArray(_React$useState, 2),
-      values = _React$useState2[0],
-      setValues = _React$useState2[1];
+      _useState6 = _slicedToArray(_useState5, 2),
+      values = _useState6[0],
+      setValues = _useState6[1];
 
   var handleChange = function handleChange(prop) {
     return function (event) {
@@ -24664,159 +24718,207 @@ function ManageCoursePage(props) {
     };
   };
 
-  var confirm = function confirm() {
-    navigate("/admin.course");
+  var handleFileChange = function handleFileChange(prop) {
+    return function (event) {
+      setValues(_objectSpread(_objectSpread({}, values), {}, _defineProperty({}, prop, event.target.files[0])));
+    };
   };
 
+  var confirm = function confirm() {
+    var postdata = new FormData();
+    postdata.append("courseName", values.courseName);
+    postdata.append("type", values.type);
+    postdata.append("city", values.city);
+    postdata.append("start", values.start);
+    postdata.append("end", values.end);
+    postdata.append("graus", values.graus);
+    postdata.append("predominant", values.predominant);
+    postdata.append("routeImage", values.routeImage);
+    postdata.append("avslope", values.avslope);
+    postdata.append("pgw", values.pgw);
+    postdata.append("restZones", values.restZones);
+    postdata.append("pdf", values.pdf);
+    postdata.append("distance", values.distance);
+    postdata.append("turns", values.turns);
+    postdata.append("description", values.description);
+    console.log(values);
+    axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/course.create", postdata, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }).then(function (response) {
+      console.log(response.data);
+    })["catch"](function (error) {
+      console.log("ERROR:: ", error.response.data);
+    });
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {}, [values]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_5__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-full py-2 px-10 "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid lg:grid-cols-2 grid-cols-1 gap-5 bg-white rounded-lg p-10"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "outlined-basic",
     label: "Nome do percurso",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.courseName,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onChange: handleChange("courseName")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_9__["default"], {
     sx: {
       minWidth: 120
     },
     className: "bg-gray-100 rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_10__["default"], {
     fullWidth: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
     id: "demo-simple-select-label"
-  }, "Selecione qual o tipo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, "Selecione qual o tipo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_12__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: 1,
     value: values.type,
     label: "Tipo percurso \xDAnico ou Ida e volta",
-    onChange: handleChange
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    onChange: handleChange("type")
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__["default"], {
     value: 1
-  }, "\xDAnico"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, "\xDAnico"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__["default"], {
     value: 2
-  }, "Ida e volta")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, "Ida e volta")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_9__["default"], {
     sx: {
       minWidth: 120
     },
     className: "bg-gray-100 rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_10__["default"], {
     fullWidth: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
     id: "demo-simple-select-label"
-  }, "Selecionar cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, "Selecionar cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_12__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: 1,
     label: "Selecionar cidade",
-    onChange: handleChange
+    value: values.city,
+    onChange: handleChange("city")
   }, cities.map(function (data, idx) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__["default"], {
       value: data.id,
       key: idx
     }, data.name);
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "outlined-basic",
     label: "In\xEDcio",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.start,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onChange: handleChange("start")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_8__["default"], {
     id: "outlined-basic",
     label: "Fim",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.end,
-    onChange: handleChange
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    onChange: handleChange("end")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_9__["default"], {
     sx: {
       minWidth: 120
     },
-    className: "bg-gray-100 rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    className: "bg-white rounded-lg flex items-end"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_10__["default"], {
     fullWidth: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
     id: "demo-simple-select-label"
-  }, "Graus de doen\xE7a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, "Graus de doen\xE7a"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_12__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: 1,
     label: "Graus de doen\xE7a",
-    onChange: handleChange
+    value: values.graus,
+    onChange: handleChange("graus")
   }, typos.map(function (data, idx) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_13__["default"], {
       value: data.id,
       key: idx
     }, data.name);
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Piso predominante"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
     label: "Piso predominante",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.predominant,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onChange: handleChange("predominant")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Upload de imagem do percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], (_React$createElement = {
+    type: "file",
     id: "outlined-basic",
     label: "Upload de imagem do percurso",
-    variant: "outlined",
-    className: "bg-white w-full",
-    value: values.routeImage,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    variant: "outlined"
+  }, _defineProperty(_React$createElement, "type", "file"), _defineProperty(_React$createElement, "className", "bg-white border border-bray-200 border-gray-400 h-12 h-14 p-3 rounded-md w-full"), _defineProperty(_React$createElement, "onChange", handleFileChange("routeImage")), _React$createElement))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Declive m\xE9dio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
     label: "Declive m\xE9dio",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.avslope,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onChange: handleChange("avslope")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Upload de pgw"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
     label: "Upload de pgw",
     variant: "outlined",
+    type: "file",
     className: "bg-white w-full",
-    value: values.pgw,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onChange: handleFileChange("pgw")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Zonas de descanso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
     label: "Zonas de descanso",
     variant: "outlined",
     className: "bg-white w-full",
     value: values.restZones,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onChange: handleChange("restZones")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Upload de pdf para impress\xE3o"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
     label: "Upload de pdf para impress\xE3o",
     variant: "outlined",
+    type: "file",
     className: "bg-white w-full",
-    value: values.pdf,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    onChange: handleFileChange("pdf")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Distancia Total"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
     id: "outlined-basic",
     label: "Distancia Total",
     variant: "outlined",
     className: "bg-white w-full",
-    value: values.pdf,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
-    id: "outlined-basic",
+    value: values.distance,
+    onChange: handleChange("distance")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    id: "demo-simple-select-label"
+  }, "Voltas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_input__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    id: "outlined-Voltas",
     label: "Voltas",
     variant: "outlined",
     className: "bg-white w-full",
-    value: values.pdf,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
+    value: values.turns,
+    onChange: handleChange("turns")
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
     className: "px-3 py-3 h-20 border border-gray-300 rounded-md",
     placeholder: "Escreva aqui as indica\xE7\xF5es do percurso",
     value: values.description,
-    onChange: handleChange
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    onChange: handleChange("description")
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_14__["default"], {
     variant: "contained",
     color: "success",
     className: "h-14 w-40",
@@ -25515,6 +25617,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../layout/layout */ "./resources/js/components/layout/layout.js");
 /* harmony import */ var _components_primarybtn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/primarybtn */ "./resources/js/components/components/primarybtn/index.js");
 /* harmony import */ var _components_backbutton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/backbutton */ "./resources/js/components/components/backbutton/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -25538,12 +25641,54 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function PercursoPage() {
+  var serverUrl = "http://localhost:8000";
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
       tab = _useState2[0],
       setTab = _useState2[1];
 
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+      _useState4 = _slicedToArray(_useState3, 2),
+      course = _useState4[0],
+      setCourse = _useState4[1];
+
+  var id = 0;
+
+  var getData = function getData() {
+    axios.post("/api/course.get", {
+      id: id
+    }).then(function (response) {
+      setCourse(response.data);
+      console.log(response.data);
+    })["catch"](function (error) {
+      console.log("ERROR:: ", error.response.data);
+    });
+  };
+
+  var handlePrint = function handlePrint() {
+    console.log("print");
+  };
+
+  var handleSendEmail = function handleSendEmail() {
+    console.log("send email");
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (location.state !== null) {
+      if (location.state.id !== undefined) {
+        id = location.state.id;
+      }
+
+      getData();
+    }
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log(tab);
+  }, [tab]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "p-5 text-black bg-white rounded-lg relative"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_backbutton__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
@@ -25557,28 +25702,22 @@ function PercursoPage() {
   }, "Percurso escolhido!"), "Veja o resumo do percurso: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justiry-around gap-5 "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Exportar percurso",
-      selected: tab == 1
-    },
+    name: "Exportar percurso",
+    selected: tab == 1,
     click: function click() {
       setTab(1);
     },
     className: "w-40"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Indicacoes",
-      selected: tab == 2
-    },
+    name: "Indicacoes",
+    selected: tab == 2,
     click: function click() {
       setTab(2), console.log("KILL");
     },
     className: "w-40"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Mapa",
-      selected: tab == 3
-    },
+    name: "Mapa",
+    selected: tab == 3,
     click: function click() {
       setTab(3);
     },
@@ -25605,25 +25744,25 @@ function PercursoPage() {
     className: "flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
-  }, "Inicio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+  }, "In\xEDcio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
-  }, "Estadio Municipal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.start !== null ? course.start : ""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
-  }, "Inicio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+  }, "Dist\xE2ncia total:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
-  }, "Estadio Municipal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.distance ? course.distance : "", "Km"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
-  }, "Inicio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+  }, "N\xBA voltas:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
-  }, "Estadio Municipal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.turns ? course.turns : ""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_to.png",
@@ -25632,17 +25771,9 @@ function PercursoPage() {
     className: "flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
-  }, "Inicio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+  }, "Fim no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
-  }, "Estadio Municipal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex items-center gap-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
-    className: "text-primary-dark text-lg"
-  }, "Inicio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
-    className: "text-primary-dark text-lg font-bold"
-  }, "Estadio Municipal")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.end ? course.end : "")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid grid-cols-2 gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
@@ -25653,7 +25784,7 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Piso predominate:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, "Estrada"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.predominant))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_break.png",
@@ -25662,7 +25793,7 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Zonas de descanso:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, "6"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.restZones))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_declare.png",
@@ -25671,28 +25802,26 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Decilive Medio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, "5%"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, tab == 2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.avslope, "%"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, tab == 2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justify-between"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-full grid-cols-4 grid text-primary-dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "col-start-2 "
-  }, "Comece a partir do sinal X.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "Caminhe ate ao ponto de referencia Y.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "Tera um passeio durante 700.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+  }, course.description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "font-bold"
-  }, "ALERT:Zona com major declive procure descansar de segulda.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
-    className: "col-start-3 "
-  }, "Aos 1.8Km encontrara um banco.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "Tera um passeio durante 700m.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), "Finalize no ponto onde comecou.", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "ALERT:Zona com major declive procure descansar de segulda."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex flex-col w-64 gap-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    href: course.pdf ? "/resource/courses/" + course.courseName + "/" + course.pdf : ""
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Enviar por email",
-      selected: false
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Enviar por email",
-      selected: false
-    }
+    name: "Print Indications",
+    selected: false,
+    click: handlePrint
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: "Enviar por email",
+    selected: false,
+    click: handleSendEmail
   }))), tab == 3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex  flex-col lg:flex-row justify-between gap-4 p-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -25708,7 +25837,7 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Piso predominate:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, "Estrada"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.predominant))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_break.png",
@@ -25717,7 +25846,7 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Zonas de descanso:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, "6"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.restZones))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_declare.png",
@@ -25726,20 +25855,16 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Decilive Medio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, "5%")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Imprimir Indiacoes",
-      selected: false
-    }
+  }, course.avslope, "%")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    name: "Imprimir Indiacoes",
+    selected: false
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    props: {
-      name: "Enviar por email",
-      selected: false
-    }
+    name: "Enviar por email",
+    selected: false
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-3/5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/img_map.png",
+    src: "".concat(serverUrl, "/resource/courses/").concat(course.courseName, "/").concat(course.routeImage),
     className: "w-full"
   }))))));
 }
@@ -25984,9 +26109,9 @@ function HomePage(_ref) {
       setSelectedType(e.target.value);
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    value: true
+    value: 1
   }, "\xDAnico"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    value: false
+    value: 2
   }, "Ida e volta")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "min-w-100  mt-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -26053,30 +26178,14 @@ function PercursosPage() {
       courses = _useState2[0],
       setCourses = _useState2[1];
 
-  if (location.state !== null) {
-    if (location.state.graus !== undefined) {
-      graus = location.state.graus;
-    }
-
-    if (location.state.city !== undefined) {
-      city = location.state.city;
-    }
-
-    if (location.state.type !== undefined) {
-      type = location.state.type;
-    }
-
-    getData();
-  }
-
   var getData = function getData() {
-    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/api/courses.get", {
+    console.log("ss");
+    axios__WEBPACK_IMPORTED_MODULE_3___default().post("/api/course.get", {
       graus: graus,
       city: city,
       type: type
     }).then(function (response) {
-      console.log(response.data);
-      setCities(response.data);
+      setCourses(response.data);
     })["catch"](function (error) {
       console.log("ERROR:: ", error.response.data);
     });
@@ -26085,9 +26194,31 @@ function PercursosPage() {
 
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useNavigate)();
 
-  var handleSelect = function handleSelect() {
-    navigate("/percurso");
+  var handleSelect = function handleSelect(id) {
+    navigate("/percurso", {
+      state: {
+        id: id
+      }
+    });
   };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (location.state !== null) {
+      if (location.state.graus !== undefined) {
+        graus = location.state.graus;
+      }
+
+      if (location.state.city !== undefined) {
+        city = location.state.city;
+      }
+
+      if (location.state.type !== undefined) {
+        type = location.state.type;
+      }
+
+      getData();
+    }
+  }, []);
 
   var TablistItem = function TablistItem(_ref) {
     var data = _ref.data;
@@ -26109,95 +26240,42 @@ function PercursosPage() {
   }, "Parabens! Temos 3 sugestoes para si em", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "text-primary"
   }, "Estarreja!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-between gap-5 "
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "bg-primary rounded-xl w-1/3 p-4 cursor-pointer",
-    onClick: handleSelect
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-4 items-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/ico_tab2.png",
-    className: "w-32"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-    className: "text-4xl text-white font-bold"
-  }, "Persurso 1")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
-    data: {
-      title: "Inicio no panta",
-      content: "Estadio Municipal",
-      type: 0
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
-    data: {
-      title: "Firm no ponto",
-      content: "Auditorio Muncipal",
-      type: 0
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/ico_hand.png",
-    className: "w-16"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "bg-green-600 rounded-xl w-1/3 p-4 cursor-pointer",
-    onClick: handleSelect
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-4 items-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/ico_tab.png",
-    className: "w-32"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-    className: "text-4xl text-white font-bold"
-  }, "Persurso 2")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
-    data: {
-      title: "Inicio no panta",
-      content: "Estadio Municipal",
-      type: 1
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
-    data: {
-      title: "Firm no ponto",
-      content: "Auditorio Muncipal",
-      type: 1
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/ico_hand.png",
-    className: "w-16"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "bg-green-900 rounded-xl w-1/3 p-4 cursor-pointer",
-    onClick: handleSelect
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-4 items-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/ico_tab.png",
-    className: "w-32"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-    className: "text-4xl text-white font-bold"
-  }, "Persurso 3")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
-    data: {
-      title: "Inicio no panta",
-      content: "Estadio Municipal",
-      type: 2
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
-    data: {
-      title: "Firm no ponto",
-      content: "Auditorio Muncipal",
-      type: 2
-    }
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/ico_hand.png",
-    className: "w-16"
-  }))))));
+    className: "flex flex-between gap-5 grid grid-cols-3 "
+  }, courses.map(function (data, idx) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "bg-green-600 rounded-xl p-4 cursor-pointer",
+      onClick: function onClick() {
+        handleSelect(data.id);
+      },
+      key: idx
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "flex gap-4 items-center"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      src: "/assets/images/ico_tab.png",
+      className: "w-32"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+      className: "text-4xl text-white font-bold"
+    }, data.courseName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "flex justify-between"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "flex flex-col"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
+      data: {
+        title: "Inicio no panta",
+        content: data.start,
+        type: 1
+      }
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(TablistItem, {
+      data: {
+        title: "Firm no ponto",
+        content: data.end,
+        type: 1
+      }
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      src: "/assets/images/ico_hand.png",
+      className: "w-16"
+    })));
+  }))));
 }
 
 /***/ }),
