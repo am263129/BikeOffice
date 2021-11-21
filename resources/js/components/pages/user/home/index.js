@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import { useNavigate, useLocation } from "react-router-dom";
 import TestResult from "../../../components/testresult";
 import axios from "axios";
+import { useGlobalState } from "../../../store/store";
 
 export default function HomePage({ route, navigation }) {
     const [cities, setCities] = useState([]);
@@ -22,6 +23,7 @@ export default function HomePage({ route, navigation }) {
     const [selectedGraus, setSelectedGraus] = useState();
     const [selectedCity, setSelectedCity] = useState();
     const [selectedType, setSelectedType] = useState();
+    const [user] = useGlobalState("user");
 
     const handleChange = (prop) => (event) => {
         console.log(event.target.value);
@@ -75,6 +77,13 @@ export default function HomePage({ route, navigation }) {
     };
 
     useEffect(() => {
+        if (!user.auth) {
+            console.log("redirect");
+            navigate("/signin");
+        }
+    });
+
+    useEffect(() => {
         getData();
     }, []);
     return (
@@ -110,6 +119,7 @@ export default function HomePage({ route, navigation }) {
                                         onChange={(e) => {
                                             setSelectedGraus(e.target.value);
                                         }}
+                                        disabled={answer !== 0}
                                     >
                                         {graus.map((data, idx) => (
                                             <MenuItem value={data.id} key={idx}>
@@ -202,9 +212,7 @@ export default function HomePage({ route, navigation }) {
                                     }}
                                 >
                                     <MenuItem value={1}>Único</MenuItem>
-                                    <MenuItem value={2}>
-                                        Ida e volta
-                                    </MenuItem>
+                                    <MenuItem value={2}>Ida e volta</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>

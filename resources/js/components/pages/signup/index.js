@@ -72,7 +72,7 @@ export default function SignUpPage() {
                 email: values.email,
                 password: values.password
             };
-            axios.post("/register", data)
+            axios.post("/api/register", data)
                 .then(
                     response => {
                         if (response.data.result === "success") {

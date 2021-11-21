@@ -25,6 +25,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post("register",[AuthController::class,'Register'])->name("Register");
 Route::post("signin",[AuthController::class,'signin'])->name("signin");
 
+Route::post('auth.password.sendlink',[AuthController::class,'sendLink'])->name("password.sendlink");
+Route::post('auth.password.reset',[AuthController::class,'resetPassword'])->name("password.reset");
+
 Route::post('typo.create',[TypoController::class,'create'])->name('typo.create');
 Route::post('typo.get',[TypoController::class, 'getTypos'])->name('typo.get');
 Route::post('typo.delete',[TypoController::class, 'delete'])->name('typo.delete');

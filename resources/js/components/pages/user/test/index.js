@@ -95,7 +95,7 @@ const TestPage = () => {
                     <h3 className="text-3xl font-bold text-center text-white">
                         Teste de Avaliação da DPOC – CAT
                     </h3>
-                    <div className="text-lg text-white flex items-end font-semibold gap-1">
+                    <div className="text-lg text-gray-800 text-2xl font-semibold flex items-end font-semibold gap-1">
                         <h3 className="text-3xl text-primary">{index + 1}</h3>/
                         {total}
                     </div>

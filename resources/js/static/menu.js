@@ -5,8 +5,8 @@ import DeviceHubIcon from '@mui/icons-material/DeviceHub';
 export const SideMenu = [
   {
     id:0,
-    name:"Tipologias",
-    route:"/admin.typology",
+    name:"Graus",
+    route:"/admin.graus",
     icon:<LocationCityIcon />
   },
   {

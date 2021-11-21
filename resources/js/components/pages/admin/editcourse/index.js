@@ -28,8 +28,38 @@ export default function ManageCoursePage(props) {
     const [cities, setCities] = useState([]);
     const [typos, setTypos] = useState([]);
 
+    const [values, setValues] = useState({
+        courseName: "",
+        type: 1,
+        city: "",
+        start: "",
+        end: "",
+        graus: "",
+        predominant: "",
+        routeImage: null,
+        avslope: "",
+        pgw: null,
+        restZones: "",
+        pdf: null,
+        distance: "",
+        turns: "",
+        description: "",
+    });
+    let id = null;
     const navigate = useNavigate();
 
+    const getinitData = () => {
+        if (id != null)
+            axios
+                .post("/api/course.get", { id, id })
+                .then((response) => {
+                    console.log(response.data);
+                    setValues(response.data);
+                })
+                .catch((error) => {
+                    console.log("ERROR:: ", error.response.data);
+                });
+    };
     const getData = () => {
         axios
             .post("/api/city.get")
@@ -50,26 +80,17 @@ export default function ManageCoursePage(props) {
     };
 
     useEffect(() => {
-        getData();
+        
+        if (location.state !== null && location.state.id !== undefined) {
+            id = location.state.id;
+            console.log(id);
+            getinitData();
+        }
+        else{
+            console.log("render");
+            getData();
+        }
     }, []);
-
-    const [values, setValues] = useState({
-        courseName: "",
-        type: 1,
-        city: "",
-        start: "",
-        end: "",
-        graus: "",
-        predominant: "",
-        routeImage: null,
-        avslope: "",
-        pgw: null,
-        restZones: "",
-        pdf: null,
-        distance: "",
-        turns: "",
-        description: "",
-    });
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -77,43 +98,55 @@ export default function ManageCoursePage(props) {
 
     const handleFileChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.files[0] });
-    }
+    };
 
     const confirm = () => {
         let postdata = new FormData();
-        postdata.append("courseName", values.courseName)
-        postdata.append("type",values.type)
-        postdata.append("city",values.city)
-        postdata.append("start",values.start)
-        postdata.append("end",values.end)
-        postdata.append("graus",values.graus)
-        postdata.append("predominant",values.predominant)
-        postdata.append("routeImage",values.routeImage)
-        postdata.append("avslope",values.avslope)
-        postdata.append("pgw",values.pgw)
-        postdata.append("restZones",values.restZones)
-        postdata.append("pdf",values.pdf)
-        postdata.append("distance",values.distance)
-        postdata.append("turns",values.turns)
-        postdata.append("description",values.description)
-        console.log(values)
-        axios
-            .post("/api/course.create", postdata ,
-            {
-                headers: {
-                  "Content-Type": "multipart/form-data",
-                }
-            })
-            .then((response) => {
-                console.log(response.data)
-            })
-            .catch((error) => {
-                console.log("ERROR:: ", error.response.data);
-            });
+        postdata.append("courseName", values.courseName);
+        postdata.append("type", values.type);
+        postdata.append("city", values.city);
+        postdata.append("start", values.start);
+        postdata.append("end", values.end);
+        postdata.append("graus", values.graus);
+        postdata.append("predominant", values.predominant);
+        postdata.append("routeImage", values.routeImage);
+        postdata.append("avslope", values.avslope);
+        postdata.append("pgw", values.pgw);
+        postdata.append("restZones", values.restZones);
+        postdata.append("pdf", values.pdf);
+        postdata.append("distance", values.distance);
+        postdata.append("turns", values.turns);
+        postdata.append("description", values.description);
+        console.log(values);
+        if (id !== null) {
+            postdata.append("id", id);
+            axios
+                .post("/api/course.update", postdata, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                })
+                .then((response) => {
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log("ERROR:: ", error.response.data);
+                });
+        } else {
+            axios
+                .post("/api/course.create", postdata, {
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    },
+                })
+                .then((response) => {
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log("ERROR:: ", error.response.data);
+                });
+        }
     };
-
-    useEffect(() => {
-    }, [values]);
 
     return (
         <AdminLayout>

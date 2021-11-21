@@ -18,7 +18,7 @@ export default function AdminPage({props}) {
     return (
         <AdminLayout>
             <div className="w-1/2 my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg">
-                <Button variant="contained" color="success" className="h-12" onClick={()=>{handleNavigate("/admin.typology")}} >Lista de Tipologias</Button>
+                <Button variant="contained" color="success" className="h-12" onClick={()=>{handleNavigate("/admin.graus")}} >Lista de Tipologias</Button>
                 <Button variant="contained" color="success" className="h-12" onClick={()=>{handleNavigate("/admin.city")}} >Lista de cidades</Button>
                 <Button variant="contained" color="success" className="h-12" onClick={()=>{handleNavigate("/admin.course")}} >Lista de percursos</Button>
             </div>
