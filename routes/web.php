@@ -21,6 +21,15 @@ Route::get('/{path?}', function () {
     return view('welcome');
 });
 
+Route::get('/signin', function () {
+    return view('welcome');
+});
+Route::get('/signup', function () {
+    return view('welcome');
+});
+Route::get('/admin.home', function () {
+    return view('welcome');
+});
 // Route::view('/{path?}', 'welcome');
 
 
