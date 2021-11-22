@@ -23,7 +23,7 @@ function Example() {
         <div className="mx-auto">
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<SigninPage />} />
+                    <Route path="/" element={<HomePage />} />
                     <Route path="/signin" element={<SigninPage />} />
                     <Route path="/signup" element={<SignUpPage />} />
                     <Route path="/sendlink" element={<SendLink />} />

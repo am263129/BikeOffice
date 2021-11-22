@@ -10,7 +10,7 @@ export default function AdminLayout({ children }) {
     const [user] = useGlobalState("user");
     let location = useLocation();
     useEffect(() => {
-        if (!user.auth && (location.pathname!=="/signin" && location.pathname!=="/signup" && location.pathname!=="/sendlink")) {
+        if (!user.auth && (location.pathname.includes("admin"))) {
             navigate("/signin");
         }
         else if(user.role!=="admin"){
