@@ -45,9 +45,9 @@ export default function SigninPage({ props }) {
                 title: <strong>Error!</strong>,
                 html:
                     email === "" ? (
-                        <i>Please input Email</i>
+                        <i>Por favor, insira o e-mail</i>
                     ) : (
-                        <i>Please input password</i>
+                        <i>Por favor insira a senha</i>
                     ),
                 icon: "error",
             });
@@ -105,7 +105,7 @@ export default function SigninPage({ props }) {
                     color="success"
                 >
                     <InputLabel htmlFor="outlined-adornment-password">
-                        Password
+                        Senha
                     </InputLabel>
                     <OutlinedInput
                         required
@@ -138,15 +138,15 @@ export default function SigninPage({ props }) {
                     className="h-12"
                     onClick={signin}
                 >
-                    Sign in
+                    Senha
                 </Button>
                 <div>
                     <h4 className="text-xl text-center">
-                        Don't have an account? Create{" "}
+                        Não tem conta? Crio{" "}
                         <a href="/signup" className="text-green-600">
-                            Account Account
+                            Conta
                         </a>{" "}
-                        Now
+                        Agora
                     </h4>
                     {/* <h3 className="text-blue-400 text-center mt-5 text-xl">
                         <a href="/sendlink">Forgot Password</a>

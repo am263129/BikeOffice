@@ -25497,7 +25497,7 @@ function SigninPage(_ref) {
   var signin = function signin() {
     if (email === "" || password === "") MySwal.fire({
       title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Error!"),
-      html: email === "" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Please input Email") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Please input password"),
+      html: email === "" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Por favor, insira o e-mail") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Por favor insira a senha"),
       icon: "error"
     });else {
       var data = {
@@ -25553,7 +25553,7 @@ function SigninPage(_ref) {
     color: "success"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_9__["default"], {
     htmlFor: "outlined-adornment-password"
-  }, "Password"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_OutlinedInput__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "Senha"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_OutlinedInput__WEBPACK_IMPORTED_MODULE_10__["default"], {
     required: true,
     id: "outlined-adornment-password",
     type: showpassword ? "text" : "password",
@@ -25573,12 +25573,12 @@ function SigninPage(_ref) {
     color: "success",
     className: "h-12",
     onClick: signin
-  }, "Sign in"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+  }, "Senha"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-xl text-center"
-  }, "Don't have an account? Create", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+  }, "N\xE3o tem conta? Crio", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: "/signup",
     className: "text-green-600"
-  }, "Account Account"), " ", "Now"))));
+  }, "Conta"), " ", "Agora"))));
 }
 
 /***/ }),
