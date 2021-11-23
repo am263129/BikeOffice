@@ -80,8 +80,8 @@ export default function CoursePage() {
             }
         } else {
             MySwal.fire({
-                title: <strong>Error !</strong>,
-                html: <i>Please input typology</i>,
+                title: <strong>Erro !</strong>,
+                html: <i>Por favor, insira a tipologia</i>,
                 icon: "info",
             });
         }
@@ -102,8 +102,8 @@ export default function CoursePage() {
 
     const deleteTypo = (id) => {
         MySwal.fire({
-            title: <strong>Info !</strong>,
-            html: <i>Are you sure to delete this city?</i>,
+            title: <strong>Informações !</strong>,
+            html: <i>Tem certeza que deseja deletar este curso?</i>,
             icon: "info",
             showCancelButton: true,
             confirmButtonText: "Delete",

@@ -99,12 +99,7 @@ export default function PercursoPage() {
                                         <h4 className="text-primary-dark text-lg font-bold">{course.end?course.end:""}</h4>
                                     </div>
                                 </div>
-                                {/* <div className="flex items-center gap-2">
-                                    <div className="flex flex-col">
-                                        <h4 className="text-primary-dark text-lg">Inicio no ponto:</h4>
-                                        <h4 className="text-primary-dark text-lg font-bold">Estadio Municipal</h4>
-                                    </div>
-                                </div> */}
+
                             </div>
                             <div className="grid grid-cols-2 gap-5">
                                 <div className="flex gap-5">

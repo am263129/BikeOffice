@@ -27,7 +27,6 @@ export default function ManageCoursePage(props) {
     const location = useLocation();
     const [cities, setCities] = useState([]);
     const [typos, setTypos] = useState([]);
-
     const [values, setValues] = useState({
         courseName: "",
         type: 1,
@@ -80,15 +79,12 @@ export default function ManageCoursePage(props) {
     };
 
     useEffect(() => {
-        
+        console.log("render");
+        getData();
         if (location.state !== null && location.state.id !== undefined) {
             id = location.state.id;
             console.log(id);
             getinitData();
-        }
-        else{
-            console.log("render");
-            getData();
         }
     }, []);
 
@@ -128,6 +124,7 @@ export default function ManageCoursePage(props) {
                 })
                 .then((response) => {
                     console.log(response.data);
+                    navigate("/admin.course")
                 })
                 .catch((error) => {
                     console.log("ERROR:: ", error.response.data);
@@ -141,6 +138,7 @@ export default function ManageCoursePage(props) {
                 })
                 .then((response) => {
                     console.log(response.data);
+                    navigate("/admin.course")
                 })
                 .catch((error) => {
                     console.log("ERROR:: ", error.response.data);

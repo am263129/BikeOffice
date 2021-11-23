@@ -6,7 +6,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Layout from "../../../layout/layout";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
@@ -33,8 +32,8 @@ export default function TypologyPage() {
                 });
         else {
             MySwal.fire({
-                title: <strong>Error !</strong>,
-                html: <i>Please input Graus</i>,
+                title: <strong>Erro !</strong>,
+                html: <i>Por favor insira Graus</i>,
                 icon: "info",
             });
         }
@@ -55,7 +54,7 @@ export default function TypologyPage() {
     const deleteTypo = (id) => {
         MySwal.fire({
             title: <strong>Info !</strong>,
-            html: <i>Are you sure to delete this city?</i>,
+            html: <i>Tem certeza que deseja deletar estes graus?</i>,
             icon: "info",
             showCancelButton: true,
             confirmButtonText: "Delete",

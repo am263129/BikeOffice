@@ -32,7 +32,7 @@ const ResetPassword = () => {
     return (
         <Layout>
             <div className="xl:w-1/2 md:w-1/2 w-full my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg">
-                <InputLabel>Please input your email address</InputLabel>
+                <InputLabel>Por favor insira seu endereço de e-mail</InputLabel>
                 <TextField
                     type="email"
                     id="outlined-basic"
@@ -46,7 +46,7 @@ const ResetPassword = () => {
                     className="h-12"
                     onClick={sendLink}
                 >
-                    Send Link
+                    Enviar Link
                 </Button>
             </div>
         </Layout>

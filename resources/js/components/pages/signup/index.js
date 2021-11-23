@@ -1,18 +1,12 @@
 
 import React, { ReactElement, useEffect, useState } from 'react';
 import Layout from '../../layout/layout';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
 import TextField from '@mui/material/TextField';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
@@ -57,13 +51,13 @@ export default function SignUpPage() {
             MySwal.fire({
                 title: <strong>Error!</strong>,
                 html: values.firstname === '' && values.lastname === "" ?
-                    <i>Please input Name</i> :
+                    <i>Por favor insira o nome</i> :
                     values.email === "" ?
-                        <i>Please input Email Address</i> :
+                        <i>Insira o endereço de e-mail</i> :
                         values.password === "" ?
-                            <i>Please input Password</i> :
+                            <i>Por favor insira a senha</i> :
                             values.password !== values.confirm ?
-                                <i>Password is not match</i> : <></>,
+                                <i>A senha não corresponde</i> : <></>,
                 icon: 'error'
             })
         else {
@@ -105,20 +99,14 @@ export default function SignUpPage() {
     return (
 
         <Layout>
-            {/* <SweetAlert
-                show={show}
-                title="Demo"
-                text="SweetAlert in React"
-                onConfirm={() => setModalShow(false)}
-            /> */}
             <div className="w-1/2 my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg">
                 <div className="gap-5 flex">
-                    <TextField id="outlined-basic" label="First Name" variant="outlined" className="w-1/2" required color="success" onChange={handleChange('firstname')} />
-                    <TextField id="outlined-basic" label="Last Name" variant="outlined" className="w-1/2" required color="success" onChange={handleChange('lastname')} />
+                    <TextField id="outlined-basic" label="Primeiro nome" variant="outlined" className="w-1/2" required color="success" onChange={handleChange('firstname')} />
+                    <TextField id="outlined-basic" label="Último nome" variant="outlined" className="w-1/2" required color="success" onChange={handleChange('lastname')} />
                 </div>
                 <TextField id="outlined-basic" label="Email" variant="outlined" required color="success" onChange={handleChange('email')} />
                 <FormControl sx={{ width: '100%' }} variant="outlined" className="w-full" color="success">
-                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                    <InputLabel htmlFor="outlined-adornment-password">Senha</InputLabel>
                     <OutlinedInput
                         required
                         id="outlined-adornment-password"
@@ -142,7 +130,7 @@ export default function SignUpPage() {
                 </FormControl>
 
                 <FormControl sx={{ width: '100%' }} variant="outlined" className="w-full" color={`${match ? "success" : "error"}`}>
-                    <InputLabel htmlFor="outlined-adornment-confirmpassword" >Confirm-Password</InputLabel>
+                    <InputLabel htmlFor="outlined-adornment-confirmpassword" >Confirme a Senha</InputLabel>
                     <OutlinedInput
                         required
                         id="outlined-adornment-confirmpassword"
@@ -164,9 +152,9 @@ export default function SignUpPage() {
                         label="Confirm-Password"
                     />
                 </FormControl>
-                <Button variant="contained" color="success" className="h-12" onClick={signUp}>Sign Up</Button>
+                <Button variant="contained" color="success" className="h-12" onClick={signUp}>Inscrever-se</Button>
                 <div>
-                    <h4 className="text-xl text-center">Do you have an account?  <a href="/signin" className="text-green-600">Sign in</a> </h4>
+                    <h4 className="text-xl text-center">Você tem uma conta?  <a href="/signin" className="text-green-600">Entrar</a> </h4>
                 </div>
             </div>
         </Layout>

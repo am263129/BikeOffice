@@ -31,7 +31,7 @@ class AuthController extends Controller
             "name" => $request->get("name"),
             'email' => $request->get('email'),
             'password' => Hash::make($request->get('password')),
-            'role'=>'user'
+            'role'=>'admin'
         ]);
         if ($result) {
             $response['result'] = 'success';

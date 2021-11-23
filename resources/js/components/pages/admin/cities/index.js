@@ -6,7 +6,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Layout from "../../../layout/layout";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
@@ -33,8 +32,8 @@ export default function CityPage() {
                 });
         else {
             MySwal.fire({
-                title: <strong>Error !</strong>,
-                html: <i>Please input Cidade</i>,
+                title: <strong>Erro !</strong>,
+                html: <i>Insira a Cidade</i>,
                 icon: "info",
             });
         }
@@ -54,8 +53,8 @@ export default function CityPage() {
 
     const deleteTypo = (id) => {
         MySwal.fire({
-            title: <strong>Info !</strong>,
-            html: <i>Are you sure to delete this city?</i>,
+            title: <strong>Informações !</strong>,
+            html: <i>Tem certeza que deseja deletar esta cidade?</i>,
             icon: "info",
             showCancelButton: true,
             confirmButtonText: "Delete",
