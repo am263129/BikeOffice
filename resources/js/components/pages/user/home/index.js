@@ -83,15 +83,15 @@ export default function HomePage({ route, navigation }) {
     }, []);
     return (
         <Layout>
-            <div className="p-5 text-black bg-white rounded-lg">
+            <div className="p-5 text-black bg-white rounded-lg w-11/12 m-auto">
                 <h4 className="text-xl my-5">Qual o seu perfil</h4>
                 <h5 className="text-lg mt-3">
                     Lorem ipsum dolor sir amet, conseteur sadipscling elitr,sed
                     diam nonumy eirmod tempor invcidunt ut
                 </h5>
-                <div className="flex gap-5 mt-5">
-                    <div className="flex gap-5 w-full items-end">
-                        <div className="w-1/2">
+                <div className="lg:flex gap-5 mt-5 grid grid-cols-1">
+                    <div className="lg:flex gap-5 w-full items-end grid-cols-1">
+                        <div className="lg:w-1/2 w-full">
                             <InputLabel
                                 htmlFor="outlined-adornment-confirmpassword"
                                 className="mb-3"

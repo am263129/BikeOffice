@@ -57,7 +57,8 @@ export default function CityPage() {
             html: <i>Tem certeza que deseja deletar esta cidade?</i>,
             icon: "info",
             showCancelButton: true,
-            confirmButtonText: "Delete",
+            confirmButtonText: "Excluir",
+            cancelButtonText:"Cancelar",
             preConfirm: () => {
                 axios
                     .post("/api/city.delete", { id: id })

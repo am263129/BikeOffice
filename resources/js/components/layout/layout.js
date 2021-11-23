@@ -15,7 +15,7 @@ export default function Layout({ children }) {
     return (
         <div className="rounded-lg p-5 justify-center flex">
             <div className="layout-container gap-5 flex flex-col">
-                <div className="layout-header">
+                <div className="layout-header m-auto w-11/12">
                     <img
                         src="/assets/images/top_image.png"
                         className="w-full"

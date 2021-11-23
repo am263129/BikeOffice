@@ -57,7 +57,8 @@ export default function TypologyPage() {
             html: <i>Tem certeza que deseja deletar estes graus?</i>,
             icon: "info",
             showCancelButton: true,
-            confirmButtonText: "Delete",
+            confirmButtonText: "Excluir",
+            cancelButtonText:"Cancelar",
             preConfirm: () => {
                 axios
                     .post("/api/typo.delete", { id: id })
@@ -95,7 +96,7 @@ export default function TypologyPage() {
                 <div className=" flex gap-5 py-5">
                     <TextField
                         id="outlined-basic"
-                        label="Nome do Grau"
+                        label="Nome do Graus"
                         variant="outlined"
                         className="bg-white w-full"
                         value={newData}

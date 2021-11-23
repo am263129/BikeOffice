@@ -23771,7 +23771,7 @@ function PrimaryButton(props) {
       click = props.click,
       className = props.className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "text-center cursor-pointer rounded-xl min-w-lg  items-center ".concat(selected ? "bg-primary-dark text-primary" : "bg-primary text-primary-dark", "  ").concat(className, "  px-3 py-2"),
+    className: "w-full min-w-max text-sm md:text-md max-h-max text-center cursor-pointer rounded-xl min-w-lg  items-center ".concat(selected ? "bg-primary-dark text-primary" : "bg-primary text-primary-dark", "  ").concat(className, "  px-3 py-2"),
     onClick: click
   }, props.name);
 }
@@ -24079,7 +24079,7 @@ function Layout(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "layout-container gap-5 flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "layout-header"
+    className: "layout-header m-auto w-11/12"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/top_image.png",
     className: "w-full"
@@ -24221,7 +24221,8 @@ function CityPage() {
       html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Tem certeza que deseja deletar esta cidade?"),
       icon: "info",
       showCancelButton: true,
-      confirmButtonText: "Delete",
+      confirmButtonText: "Excluir",
+      cancelButtonText: "Cancelar",
       preConfirm: function preConfirm() {
         axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/city.delete", {
           id: id
@@ -24466,7 +24467,8 @@ function CoursePage() {
       html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Tem certeza que deseja deletar este curso?"),
       icon: "info",
       showCancelButton: true,
-      confirmButtonText: "Delete",
+      confirmButtonText: "Excluir",
+      cancelButtonText: "Cancelar",
       preConfirm: function preConfirm() {
         axios__WEBPACK_IMPORTED_MODULE_2___default().post("/api/course.delete", {
           id: id
@@ -25211,7 +25213,8 @@ function TypologyPage() {
       html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Tem certeza que deseja deletar estes graus?"),
       icon: "info",
       showCancelButton: true,
-      confirmButtonText: "Delete",
+      confirmButtonText: "Excluir",
+      cancelButtonText: "Cancelar",
       preConfirm: function preConfirm() {
         axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/typo.delete", {
           id: id
@@ -25250,7 +25253,7 @@ function TypologyPage() {
     className: " flex gap-5 py-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_5__["default"], {
     id: "outlined-basic",
-    label: "Nome do Grau",
+    label: "Nome do Graus",
     variant: "outlined",
     className: "bg-white w-full",
     value: newData,
@@ -25838,13 +25841,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-
-
-
-
-
 function PercursoPage() {
   var serverUrl = "http://localhost:8000";
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
@@ -25893,17 +25889,17 @@ function PercursoPage() {
     console.log(tab);
   }, [tab]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "p-5 text-black bg-white rounded-lg relative"
+    className: "p-5 text-black bg-white rounded-lg relative max-w-7xl m-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_backbutton__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-xl my-10"
   }, "Resultado"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between"
+    className: "lg:flex justify-between grid grid-cols-1 grid-rows-2 items-baseline"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-lg mt-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "text-primary"
   }, "Percurso escolhido!"), "Veja o resumo do percurso: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justiry-around gap-5 "
+    className: "w-full sm:w-auto sm:flex justiry-around gap-5 grid grid-cols-1 mx-auto lg:w-2/3 w-4/5 lg:mr-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Exportar percurso",
     selected: tab == 1,
@@ -25926,23 +25922,25 @@ function PercursoPage() {
     },
     className: "w-40"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex "
+    className: "lg:flex "
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex items-center justify-center flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_tab2.png",
     className: "w-64"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col justify-between pb-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
     className: "text-primary text-5xl font-bold"
-  }, "Percurso1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between"
+  }, "Percurso1")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex flex-col justify-between pb-5 mt-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid grid-cols-3 gap-4"
+    className: "lg:flex justify-between grid grid-cols-1 gap-10"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "grid lg:grid-cols-3 md:grid-cols-2 gap-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_from.png",
-    className: "w-10 h-10"
+    className: "lg:block hidden w-10 h-10"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
@@ -25969,7 +25967,7 @@ function PercursoPage() {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_to.png",
-    className: "w-10 h-10"
+    className: "lg:block hidden  w-10 h-10"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex flex-col"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
@@ -25977,7 +25975,7 @@ function PercursoPage() {
   }, "Fim no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
   }, course.end ? course.end : "")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid grid-cols-2 gap-5"
+    className: "grid md:grid-cols-2 grid-cols-1 gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -26006,33 +26004,37 @@ function PercursoPage() {
   }, "Decilive Medio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
   }, course.avslope, "%"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, tab == 2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between"
+    className: "flex justify-between items-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full grid-cols-4 grid text-primary-dark"
+    className: "w-full lg:grid-cols-4 grid-cols-1 grid text-primary-dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "col-start-2 "
   }, course.description, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "font-bold"
   }, "ALERT:Zona com major declive procure descansar de segulda."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col w-64 gap-5"
+    className: "flex flex-col md:flex-row w-max gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
     href: course.pdf ? "/resource/courses/" + course.courseName + "/" + course.pdf : ""
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Print Indications",
     selected: false,
-    click: handlePrint
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    click: handlePrint,
+    className: "min-w-max"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
+    className: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Enviar por email",
     selected: false,
-    click: handleSendEmail
-  }))), tab == 3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    click: handleSendEmail,
+    className: "min-w-max"
+  })))), tab == 3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex  flex-col lg:flex-row justify-between gap-4 p-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5 flex-col w-64 justify-center w-2/5 max-w-md"
+    className: "flex gap-5 flex-col min-w-64 justify-center w-2/5 max-w-md"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid grid-cols-1 gap-5"
+    className: "grid grid-cols-1 gap-5 md:block hidden"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5"
+    className: "flex gap-5 mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/target.png",
     className: "w-16"
@@ -26041,7 +26043,7 @@ function PercursoPage() {
   }, "Piso predominate:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
   }, course.predominant))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5"
+    className: "flex gap-5 mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_break.png",
     className: "w-16"
@@ -26050,7 +26052,7 @@ function PercursoPage() {
   }, "Zonas de descanso:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
   }, course.restZones))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5"
+    className: "flex gap-5 mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_declare.png",
     className: "w-16"
@@ -26058,14 +26060,16 @@ function PercursoPage() {
     className: "text-primary-dark"
   }, "Decilive Medio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark font-bold"
-  }, course.avslope, "%")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, course.avslope, "%")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: " flex flex-col gap-10"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Imprimir Indiacoes",
     selected: false
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Enviar por email",
     selected: false
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-3/5"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "lg:w-3/5 w-full "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "".concat(serverUrl, "/resource/courses/").concat(course.courseName, "/").concat(course.routeImage),
     className: "w-full"
@@ -26217,17 +26221,17 @@ function HomePage(_ref) {
     getData();
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "p-5 text-black bg-white rounded-lg"
+    className: "p-5 text-black bg-white rounded-lg w-11/12 m-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-xl my-5"
   }, "Qual o seu perfil"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-lg mt-3"
   }, "Lorem ipsum dolor sir amet, conseteur sadipscling elitr,sed diam nonumy eirmod tempor invcidunt ut"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5 mt-5"
+    className: "lg:flex gap-5 mt-5 grid grid-cols-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5 w-full items-end"
+    className: "lg:flex gap-5 w-full items-end grid-cols-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-1/2"
+    className: "lg:w-1/2 w-full"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
     htmlFor: "outlined-adornment-confirmpassword",
     className: "mb-3"
@@ -26443,7 +26447,7 @@ function PercursosPage() {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "p-5 text-black bg-white rounded-lg relative"
+    className: "p-5 text-black bg-white rounded-lg relative max-w-7xl"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-xl my-5"
   }, "Resultados"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_backbutton__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -26451,7 +26455,7 @@ function PercursosPage() {
   }, "Parabens! Temos 3 sugestoes para si em", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "text-primary"
   }, "Estarreja!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-between gap-5 grid grid-cols-3 "
+    className: "flex flex-between gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1"
   }, courses.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "bg-green-600 rounded-xl p-4 cursor-pointer",
@@ -26460,7 +26464,7 @@ function PercursosPage() {
       },
       key: idx
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "flex gap-4 items-center"
+      className: "flex gap-1 lg:gap-4 items-center"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: "/assets/images/ico_tab.png",
       className: "w-32"
@@ -26640,7 +26644,7 @@ var TestPage = function TestPage() {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-center relative rounded-lg p-5 relative"
+    className: "flex justify-center relative rounded-lg lg:p-5 relative"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_backbutton__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex justify-center items-center flex-col gap-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
@@ -26650,13 +26654,13 @@ var TestPage = function TestPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
     className: "text-3xl text-primary"
   }, index + 1), "/", total), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex justify-between w-1/2 font-bold text-xl"
+    className: "flex justify-between w-10/12 lg:w-1/2 font-bold text-xl gap-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-2/5 text-green-700 p-5 bg-green-100 rounded-md "
+    className: "w-1/2 lg:w-2/5 text-green-700 p-5 bg-green-100 rounded-md "
   }, _static_testData__WEBPACK_IMPORTED_MODULE_4__.questionData[index].left), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-2/5 text-red-700 p-5 bg-red-100 rounded-md"
+    className: "w-1/2 lg:w-2/5 text-red-700 p-5 bg-red-100 rounded-md"
   }, _static_testData__WEBPACK_IMPORTED_MODULE_4__.questionData[index].right)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-3"
+    className: "flex gap-1 lg:gap-3"
   }, answers.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_7__["default"], {
       key: idx,

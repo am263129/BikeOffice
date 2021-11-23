@@ -106,7 +106,8 @@ export default function CoursePage() {
             html: <i>Tem certeza que deseja deletar este curso?</i>,
             icon: "info",
             showCancelButton: true,
-            confirmButtonText: "Delete",
+            confirmButtonText: "Excluir",
+            cancelButtonText:"Cancelar",
             preConfirm: () => {
                 axios
                     .post("/api/course.delete", { id: id })

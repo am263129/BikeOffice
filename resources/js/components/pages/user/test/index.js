@@ -89,7 +89,7 @@ const TestPage = () => {
     };
     return (
         <Layout>
-            <div className="flex justify-center relative rounded-lg p-5 relative">
+            <div className="flex justify-center relative rounded-lg lg:p-5 relative">
                 <BackButton />
                 <div className="flex justify-center items-center flex-col gap-10">
                     <h3 className="text-3xl font-bold text-center text-white">
@@ -100,15 +100,15 @@ const TestPage = () => {
                         {total}
                     </div>
                     {/* <div className="capitalize text-white m-3 h-20 text-center w-3/4 text-2xl">{questionData[index].question}</div> */}
-                    <div className="flex justify-between w-1/2 font-bold text-xl">
-                        <div className="w-2/5 text-green-700 p-5 bg-green-100 rounded-md ">
+                    <div className="flex justify-between w-10/12 lg:w-1/2 font-bold text-xl gap-3">
+                        <div className="w-1/2 lg:w-2/5 text-green-700 p-5 bg-green-100 rounded-md ">
                             {questionData[index].left}
                         </div>
-                        <div className="w-2/5 text-red-700 p-5 bg-red-100 rounded-md">
+                        <div className="w-1/2 lg:w-2/5 text-red-700 p-5 bg-red-100 rounded-md">
                             {questionData[index].right}
                         </div>
                     </div>
-                    <div className="flex gap-3">
+                    <div className="flex gap-1 lg:gap-3">
                         {answers.map((data, idx) => (
                             <Button
                                 key={idx}
