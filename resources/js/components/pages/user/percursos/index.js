@@ -76,15 +76,15 @@ export default function PercursosPage() {
 
     return (
         <Layout>
-            <div className="p-5 text-black bg-white rounded-lg relative max-w-7xl">
+            <div className="p-5 text-black bg-white rounded-lg relative max-w-7xl mx-auto">
                 <h4 className="text-xl my-5">Resultados</h4>
                 <BackButton />
                 <h5 className="text-lg mt-3">
                     Parabens! Temos 3 sugestoes para si em{" "}
                     <span className="text-primary">Estarreja!</span>
                 </h5>
-                <div className="flex flex-between gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
-                    {courses.map((data, idx) => (
+                <div className="flex flex-between gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10">
+                    {courses.length>0?courses.map((data, idx) => (
                         <div
                             className="bg-green-600 rounded-xl p-4 cursor-pointer"
                             onClick={() => {
@@ -124,7 +124,10 @@ export default function PercursosPage() {
                                 />
                             </div>
                         </div>
-                    ))}
+                    )):
+                    <div className="flex justify-center items-center">
+                        <h2 className="text-5xl text-primary-green font-bold">Curso não existe</h2>    
+                    </div>}
                 </div>
             </div>
         </Layout>

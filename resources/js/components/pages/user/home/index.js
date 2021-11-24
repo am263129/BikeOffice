@@ -10,6 +10,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import TestResult from "../../../components/testresult";
 import axios from "axios";
 import { useGlobalState } from "../../../store/store";
+import PrimaryButton from "../../../components/primarybtn";
 
 export default function HomePage({ route, navigation }) {
     const [cities, setCities] = useState([]);
@@ -136,14 +137,7 @@ export default function HomePage({ route, navigation }) {
                         >
                             Nao sabe qual e?
                         </InputLabel>
-                        <Button
-                            variant="contained"
-                            color="success"
-                            className="h-14 w-60 rounded-lg"
-                            onClick={handleTest}
-                        >
-                            Clique e descubra
-                        </Button>
+                        <PrimaryButton click={handleTest} name="Clique e descubra" />
                     </div>
                 </div>
                 <div className="flex gap-5 mt-5">
@@ -215,14 +209,7 @@ export default function HomePage({ route, navigation }) {
                 </div>
 
                 <div className="min-w-100  mt-5">
-                    <Button
-                        variant="contained"
-                        color="success"
-                        className="h-14 w-60 rounded-lg"
-                        onClick={() => handleCofirm()}
-                    >
-                        Avancar
-                    </Button>
+                <PrimaryButton click={handleCofirm} name="Avancar" className="lg:w-max w-full"/>
                 </div>
             </div>
         </Layout>

@@ -23641,7 +23641,7 @@ __webpack_require__.r(__webpack_exports__);
 var BackButton = function BackButton() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "rounded-md text-gray-500 text-md font-bold absolute top-10 right-10 cursor-pointer border-2 border-white px-3 py-2",
+    className: "rounded-md text-gray-500 text-md font-bold absolute top-10 right-5 cursor-pointer border-2 border-white px-3 py-2",
     onClick: function onClick() {
       navigate(-1);
     }
@@ -23771,7 +23771,7 @@ function PrimaryButton(props) {
       click = props.click,
       className = props.className;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full min-w-max text-sm md:text-md max-h-max text-center cursor-pointer rounded-xl min-w-lg  items-center ".concat(selected ? "bg-primary-dark text-primary" : "bg-primary text-primary-dark", "  ").concat(className, "  px-3 py-2"),
+    className: "h-12 min-w-max text-md md:text-md max-h-max text-center cursor-pointer rounded-md min-w-lg   ".concat(selected ? "bg-primary-dark text-primary" : "bg-primary text-white hover:bg-primary-darkgreen ", "  ").concat(className, "  px-10 py-2 text-center flex items-center justify-center"),
     onClick: click
   }, props.name);
 }
@@ -24075,15 +24075,17 @@ function Layout(_ref) {
   // });
   console.log("K");
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "rounded-lg p-5 justify-center flex"
+    className: "rounded-lg p-5 flex justify-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "layout-container gap-5 flex flex-col"
+    className: "layout-container gap-5 flex flex-col xl:w-custom-full"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "layout-header m-auto w-11/12"
+    className: "layout-header m-auto w-full h-52 rounded-xl flex flex-col items-start justify-center px-20"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/top_image.png",
-    className: "w-full"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/assets/images/logo.png",
+    alt: "top logo"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    className: "text-white lg:w-1/2 text-center sm:text-left"
+  }, "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("main", null, children), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/woman.png",
     className: "m-auto"
   })));
@@ -25898,29 +25900,29 @@ function PercursoPage() {
     className: "text-lg mt-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "text-primary"
-  }, "Percurso escolhido!"), "Veja o resumo do percurso: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "w-full sm:w-auto sm:flex justiry-around gap-5 grid grid-cols-1 mx-auto lg:w-2/3 w-4/5 lg:mr-0"
+  }, "Percurso escolhido!"), "Veja o resumo do percurso:", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "w-full justiry-around gap-5 grid grid-cols-1  md:flex justify-between lg:justify-end"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Exportar percurso",
     selected: tab == 1,
     click: function click() {
       setTab(1);
     },
-    className: "w-40"
+    className: "w-full md:w-auto"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Indicacoes",
     selected: tab == 2,
     click: function click() {
-      setTab(2), console.log("KILL");
+      setTab(2);
     },
-    className: "w-40"
+    className: "w-full md:w-auto"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
     name: "Mapa",
     selected: tab == 3,
     click: function click() {
       setTab(3);
     },
-    className: "w-40"
+    className: "w-full md:w-auto"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lg:flex "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -25935,14 +25937,14 @@ function PercursoPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lg:flex justify-between grid grid-cols-1 gap-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid lg:grid-cols-3 md:grid-cols-2 gap-4"
+    className: "grid lg:grid-cols-3 md:grid-cols-2 grid-rows-3 gap-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_from.png",
-    className: "lg:block hidden w-10 h-10"
+    className: "w-8 h-8"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
+    className: "flex flex-col w-3/4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
   }, "In\xEDcio no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
@@ -25950,7 +25952,9 @@ function PercursoPage() {
   }, course.start !== null ? course.start : ""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
+    className: "w-8 h-8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex flex-col w-3/4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
   }, "Dist\xE2ncia total:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
@@ -25958,29 +25962,41 @@ function PercursoPage() {
   }, course.distance ? course.distance : "", "Km"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
+    className: "w-8 h-8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex flex-col w-3/4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
-  }, "N\xBA voltas:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+  }, "Dist\xE2ncia das voltas::"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
-  }, course.turns ? course.turns : ""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, course.restZones ? course.restZones : ""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex items-center gap-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_to.png",
-    className: "lg:block hidden  w-10 h-10"
+    className: "w-8 h-8"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-col"
+    className: "flex flex-col w-3/4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg"
   }, "Fim no ponto:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-primary-dark text-lg font-bold"
-  }, course.end ? course.end : "")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid md:grid-cols-2 grid-cols-1 gap-5"
+  }, course.end ? course.end : ""))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex items-center gap-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "w-8 h-8"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex flex-col w-3/4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+    className: "text-primary-dark text-lg"
+  }, "N\xBA voltas:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
+    className: "text-primary-dark text-lg font-bold"
+  }, course.turns ? course.turns : "")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "grid md:grid-cols-2 grid-cols-1 gap-5 ".concat(tab === 3 && "hidden")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/target.png",
-    className: "w-16"
+    className: "w-16 h-16"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark"
   }, "Piso predominate:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -25989,7 +26005,7 @@ function PercursoPage() {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_break.png",
-    className: "w-16"
+    className: "w-16 h-16"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark"
   }, "Zonas de descanso:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -25998,7 +26014,7 @@ function PercursoPage() {
     className: "flex gap-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_declare.png",
-    className: "w-16"
+    className: "w-16 h-16"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark"
   }, "Decilive Medio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -26030,14 +26046,14 @@ function PercursoPage() {
   })))), tab == 3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex  flex-col lg:flex-row justify-between gap-4 p-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex gap-5 flex-col min-w-64 justify-center w-2/5 max-w-md"
+    className: "flex gap-5 flex-col min-w-64 justify-center w-full md:w-2/5  max-w-md"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "grid grid-cols-1 gap-5 md:block hidden"
+    className: "grid grid-cols-1 gap-5 "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5 mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/target.png",
-    className: "w-16"
+    className: "w-16 h-16"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark"
   }, "Piso predominate:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -26046,7 +26062,7 @@ function PercursoPage() {
     className: "flex gap-5 mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_break.png",
-    className: "w-16"
+    className: "w-16 h-16"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark"
   }, "Zonas de descanso:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -26055,7 +26071,7 @@ function PercursoPage() {
     className: "flex gap-5 mb-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/ico_declare.png",
-    className: "w-16"
+    className: "w-16 h-16"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
     className: "text-primary-dark"
   }, "Decilive Medio:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -26063,11 +26079,15 @@ function PercursoPage() {
   }, course.avslope, "%")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: " flex flex-col gap-10"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: "w-full md:w-auto",
     name: "Imprimir Indiacoes",
-    selected: false
+    selected: false,
+    click: handlePrint
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    className: "w-full md:w-auto",
     name: "Enviar por email",
-    selected: false
+    selected: false,
+    click: handleSendEmail
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lg:w-3/5 w-full "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -26091,17 +26111,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _layout_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../layout/layout */ "./resources/js/components/layout/layout.js");
-/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
-/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
-/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
-/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/FormControl.js");
-/* harmony import */ var _mui_material_Select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/Select */ "./node_modules/@mui/material/Select/Select.js");
-/* harmony import */ var _mui_material_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/Button */ "./node_modules/@mui/material/Button/Button.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
+/* harmony import */ var _mui_material_Box__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Box */ "./node_modules/@mui/material/Box/Box.js");
+/* harmony import */ var _mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/InputLabel */ "./node_modules/@mui/material/InputLabel/InputLabel.js");
+/* harmony import */ var _mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/material/MenuItem */ "./node_modules/@mui/material/MenuItem/MenuItem.js");
+/* harmony import */ var _mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @mui/material/FormControl */ "./node_modules/@mui/material/FormControl/FormControl.js");
+/* harmony import */ var _mui_material_Select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @mui/material/Select */ "./node_modules/@mui/material/Select/Select.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/index.js");
 /* harmony import */ var _components_testresult__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../components/testresult */ "./resources/js/components/components/testresult/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../store/store */ "./resources/js/components/store/store.js");
+/* harmony import */ var _components_primarybtn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../components/primarybtn */ "./resources/js/components/components/primarybtn/index.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -26132,6 +26152,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function HomePage(_ref) {
   var route = _ref.route,
       navigation = _ref.navigation;
@@ -26148,9 +26169,9 @@ function HomePage(_ref) {
 
   console.log("Kll");
   var answer = 0;
-  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLocation)();
+  var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)();
   if (location.state !== null && location.state.answer !== undefined) answer = location.state.answer;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useNavigate)();
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useNavigate)();
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
       _useState6 = _slicedToArray(_useState5, 2),
@@ -26232,19 +26253,19 @@ function HomePage(_ref) {
     className: "lg:flex gap-5 w-full items-end grid-cols-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lg:w-1/2 w-full"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     htmlFor: "outlined-adornment-confirmpassword",
     className: "mb-3"
-  }, "Tipologia de doenca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "Tipologia de doenca"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
     sx: {
       minWidth: 120
     },
     className: "bg-gray-100 rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     fullWidth: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     id: "demo-simple-select-label"
-  }, "Selecione qual o tipo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Selecione qual o tipo"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: 1,
@@ -26254,7 +26275,7 @@ function HomePage(_ref) {
     },
     disabled: answer !== 0
   }, graus.map(function (data, idx) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_11__["default"], {
       value: data.id,
       key: idx
     }, data.name);
@@ -26262,31 +26283,29 @@ function HomePage(_ref) {
     answer: answer
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "min-w-100"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     htmlFor: "outlined-adornment-confirmpassword",
     className: "mb-3"
-  }, "Nao sabe qual e?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    variant: "contained",
-    color: "success",
-    className: "h-14 w-60 rounded-lg",
-    onClick: handleTest
-  }, "Clique e descubra"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, "Nao sabe qual e?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    click: handleTest,
+    name: "Clique e descubra"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex gap-5 mt-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-full"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     htmlFor: "outlined-adornment-confirmpassword",
     className: "mb-3"
-  }, "Cidade onde vai caminhar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "Cidade onde vai caminhar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
     sx: {
       minWidth: 120
     },
     className: "bg-gray-100 rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     fullWidth: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     id: "demo-simple-select-label"
-  }, "Selecione a cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Selecione a cidade"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: 1,
@@ -26295,7 +26314,7 @@ function HomePage(_ref) {
       setSelectedCity(e.target.value);
     }
   }, cities.map(function (data, idx) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_11__["default"], {
       value: data.id,
       key: idx
     }, data.name);
@@ -26303,19 +26322,19 @@ function HomePage(_ref) {
     className: "flex gap-5 mt-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-full"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     htmlFor: "outlined-adornment-confirmpassword",
     className: "mb-3"
-  }, "Percurso unico ou ida e volta"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "Percurso unico ou ida e volta"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Box__WEBPACK_IMPORTED_MODULE_8__["default"], {
     sx: {
       minWidth: 120
     },
     className: "bg-gray-100 rounded-lg"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_FormControl__WEBPACK_IMPORTED_MODULE_9__["default"], {
     fullWidth: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_InputLabel__WEBPACK_IMPORTED_MODULE_7__["default"], {
     id: "demo-simple-select-label"
-  }, "Selecione tipo de percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, "Selecione tipo de percurso"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Select__WEBPACK_IMPORTED_MODULE_10__["default"], {
     labelId: "demo-simple-select-label",
     id: "demo-simple-select",
     defaultValue: true,
@@ -26323,20 +26342,17 @@ function HomePage(_ref) {
     onChange: function onChange(e) {
       setSelectedType(e.target.value);
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_11__["default"], {
     value: 1
-  }, "\xDAnico"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, "\xDAnico"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_MenuItem__WEBPACK_IMPORTED_MODULE_11__["default"], {
     value: 2
   }, "Ida e volta")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "min-w-100  mt-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    variant: "contained",
-    color: "success",
-    className: "h-14 w-60 rounded-lg",
-    onClick: function onClick() {
-      return handleCofirm();
-    }
-  }, "Avancar"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_primarybtn__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    click: handleCofirm,
+    name: "Avancar",
+    className: "lg:w-max w-full"
+  }))));
 }
 
 /***/ }),
@@ -26447,7 +26463,7 @@ function PercursosPage() {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "p-5 text-black bg-white rounded-lg relative max-w-7xl"
+    className: "p-5 text-black bg-white rounded-lg relative max-w-7xl mx-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", {
     className: "text-xl my-5"
   }, "Resultados"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_backbutton__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h5", {
@@ -26455,8 +26471,8 @@ function PercursosPage() {
   }, "Parabens! Temos 3 sugestoes para si em", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
     className: "text-primary"
   }, "Estarreja!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "flex flex-between gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1"
-  }, courses.map(function (data, idx) {
+    className: "flex flex-between gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-10"
+  }, courses.length > 0 ? courses.map(function (data, idx) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "bg-green-600 rounded-xl p-4 cursor-pointer",
       onClick: function onClick() {
@@ -26490,7 +26506,11 @@ function PercursosPage() {
       src: "/assets/images/ico_hand.png",
       className: "w-16"
     })));
-  }))));
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "flex justify-center items-center"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", {
+    className: "text-5xl text-primary-green font-bold"
+  }, "Curso n\xE3o existe")))));
 }
 
 /***/ }),
@@ -31345,7 +31365,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".layout-container {\n  max-width: 1600px;\n}\n.layout-container .layout-header {\n  background-image: url(\"/assets/images/top_image.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".layout-container {\n  max-width: 1600px;\n}\n.layout-container .layout-header {\n  background-image: url(\"/assets/images/top_image.png\");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-position: center;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
