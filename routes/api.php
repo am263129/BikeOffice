@@ -40,3 +40,5 @@ Route::post('course.create',[CourseController::class,'create'])->name('course.cr
 Route::post('course.get',[CourseController::class, 'getCourse'])->name('course.get');
 Route::post('course.update',[CourseController::class, 'updateCourse'])->name('course.update');
 Route::post('course.delete',[CourseController::class, 'delete'])->name('course.delete');
+
+Route::post('static.signin', [AuthController::class, 'staticSignin']);

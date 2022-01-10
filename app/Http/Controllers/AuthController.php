@@ -66,6 +66,39 @@ class AuthController extends Controller
         return response()->json($response);
     }
 
+    public function staticSignin(Request $request)
+    {
+        $response["code"] = "000000";
+        $response["message"] = null;
+        $response["messagedetail"] = null;
+        $data["csrftoken"] = "9ff65b582ccbe7d7734edc8d3ce68441";
+        $data["emailVerified"] = true;
+        $data["gauth"] = false;
+        $data["mobileSecurity"] = false;
+        $data["securitykey"] = false;
+        $data["legacysecuritykey"] = false;
+        $data["token"] = null;
+        $data["confirmtips"] = false;
+        $data["devicechangeconfirm"] = true;
+        $data["currentdeviceid"] = "1641808377250gxi6abwlddec6z2ccx0";
+        $data["disable"] = false;
+        $data["authstatus"] = "not_need_auth";
+        $data["relogin"] = false;
+        $data["pendingreview"] = false;
+        $data["mobile"] = null;
+        $data["mobilecode"] = null;
+        $data["userid"] = "377760530";
+        $data["email"] = "adam.cela21@gmail.com";
+        $data["onlyBindMobileOrEmail"] = true;
+        $data["newDeviceFLag"] = false;
+        $data["code"] = "892b5055821f4c3ba55820645bedd135";
+        $data["needComplianceAndHashAsset"] = false;
+        $data["needComplianceCountry"] = null;
+        $data["needComplianceTimeLeft"] = null;
+        $response["data"] = $data;
+        $response["success"] = true;
+        return response()->json($response);
+    }
 
     public function sendLink(Request $request)
 

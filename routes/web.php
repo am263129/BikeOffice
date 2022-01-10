@@ -31,6 +31,3 @@ Route::get('/admin.home', function () {
     return view('welcome');
 });
 // Route::view('/{path?}', 'welcome');
-
-
-
