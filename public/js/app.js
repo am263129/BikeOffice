@@ -23953,7 +23953,7 @@ function Example() {
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_user_Percurso__WEBPACK_IMPORTED_MODULE_7__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "/admin.home",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_admin_home__WEBPACK_IMPORTED_MODULE_11__["default"], null)
+    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_admin_cities__WEBPACK_IMPORTED_MODULE_9__["default"], null)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.Route, {
     path: "/admin.graus",
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_admin_typology__WEBPACK_IMPORTED_MODULE_8__["default"], null)
@@ -24073,7 +24073,6 @@ function Layout(_ref) {
   //         navigate("/signin");
   //     }
   // });
-  console.log("K");
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rounded-lg p-5 flex justify-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -24187,30 +24186,52 @@ function CityPage() {
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
-      newData = _useState4[0],
-      setNewData = _useState4[1];
+      filter = _useState4[0],
+      setFilter = _useState4[1];
 
   var addData = function addData() {
-    if (newData !== "" && newData != null) axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/city.create", {
-      data: newData
-    }).then(function (response) {
-      console.log(response.data);
-      setCities([].concat(_toConsumableArray(cities), [response.data]));
-      setNewData("");
-    })["catch"](function (error) {
-      console.log("ERROR:: ", error.response.data);
-    });else {
-      MySwal.fire({
-        title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Erro !"),
-        html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Insira a Cidade"),
-        icon: "info"
-      });
-    }
+    MySwal.fire({
+      title: "Insira o novo nome da cidade",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off"
+      },
+      confirmButtonText: "Adicionar",
+      showLoaderOnConfirm: true,
+      preConfirm: function preConfirm(city) {
+        if (city !== "" && city != null) axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/city.create", {
+          data: city
+        }).then(function (response) {
+          console.log(response.data);
+          setCities([].concat(_toConsumableArray(cities), [response.data]));
+          setFilter("");
+          MySwal.fire({
+            title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "sucesso !"),
+            html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Nova cidade adicionada"),
+            icon: "success"
+          });
+        })["catch"](function (error) {
+          console.log("ERROR:: ", error.response.data);
+        });else {
+          MySwal.fire({
+            title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Erro !"),
+            html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Insira a Cidade"),
+            icon: "info"
+          });
+        }
+      },
+      allowOutsideClick: function allowOutsideClick() {
+        return !MySwal.isLoading();
+      }
+    }).then(function (result) {
+      console.log(result);
+    });
   };
 
   var getData = function getData() {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/city.get").then(function (response) {
-      console.log(response.data);
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/city.get", {
+      filter: filter
+    }).then(function (response) {
       setCities(response.data);
     })["catch"](function (error) {
       console.log("ERROR:: ", error.response.data);
@@ -24235,8 +24256,6 @@ function CityPage() {
             console.log("remove");
             setCities(arrayRemove(cities, id));
           }
-
-          console.log(response.data);
         })["catch"](function (error) {
           console.log("ERROR:: ", error.response.data);
         });
@@ -24251,12 +24270,12 @@ function CityPage() {
   }
 
   var handleChange = function handleChange(event) {
-    setNewData(event.target.value);
+    setFilter(event.target.value);
   };
 
-  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     getData();
-  }, []);
+  }, [filter]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-full py-10 px-10 overflow-auto "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -24266,7 +24285,7 @@ function CityPage() {
     label: "Nome da Cidade",
     variant: "outlined",
     className: "bg-white w-full",
-    value: newData,
+    value: filter,
     onChange: handleChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "contained",
@@ -25179,29 +25198,52 @@ function TypologyPage() {
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState4 = _slicedToArray(_useState3, 2),
-      newData = _useState4[0],
-      setNewData = _useState4[1];
+      filter = _useState4[0],
+      setFilter = _useState4[1];
 
   var addData = function addData() {
-    if (newData !== "" && newData != null) axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/typo.create", {
-      data: newData
-    }).then(function (response) {
-      console.log(response.data);
-      setTypos([].concat(_toConsumableArray(typos), [response.data]));
-      setNewData("");
-    })["catch"](function (error) {
-      console.log("ERROR:: ", error.response.data);
-    });else {
-      MySwal.fire({
-        title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Erro !"),
-        html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Por favor insira Graus"),
-        icon: "info"
-      });
-    }
+    MySwal.fire({
+      title: "Insira o novo nome da graus",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off"
+      },
+      confirmButtonText: "Adicionar",
+      showLoaderOnConfirm: true,
+      preConfirm: function preConfirm(graus) {
+        if (graus !== "" && graus != null) axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/typo.create", {
+          data: graus
+        }).then(function (response) {
+          console.log(response.data);
+          setTypos([].concat(_toConsumableArray(typos), [response.data]));
+          setFilter("");
+          MySwal.fire({
+            title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "sucesso !"),
+            html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Nova graus adicionada."),
+            icon: "success"
+          });
+        })["catch"](function (error) {
+          console.log("ERROR:: ", error.response.data);
+        });else {
+          MySwal.fire({
+            title: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("strong", null, "Erro !"),
+            html: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("i", null, "Por favor insira Graus"),
+            icon: "info"
+          });
+        }
+      },
+      allowOutsideClick: function allowOutsideClick() {
+        return !MySwal.isLoading();
+      }
+    }).then(function (result) {
+      console.log(result);
+    });
   };
 
   var getData = function getData() {
-    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/typo.get").then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_1___default().post("/api/typo.get", {
+      filter: filter
+    }).then(function (response) {
       console.log(response.data);
       setTypos(response.data);
     })["catch"](function (error) {
@@ -25243,12 +25285,12 @@ function TypologyPage() {
   }
 
   var handleChange = function handleChange(event) {
-    setNewData(event.target.value);
+    setFilter(event.target.value);
   };
 
-  react__WEBPACK_IMPORTED_MODULE_0__.useEffect(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     getData();
-  }, []);
+  }, [filter]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_admin_layout__WEBPACK_IMPORTED_MODULE_4__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "w-full py-10 px-10 overflow-auto "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -25258,7 +25300,7 @@ function TypologyPage() {
     label: "Nome do Graus",
     variant: "outlined",
     className: "bg-white w-full",
-    value: newData,
+    value: filter,
     onChange: handleChange
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_Button__WEBPACK_IMPORTED_MODULE_6__["default"], {
     variant: "contained",
@@ -25541,7 +25583,7 @@ function SigninPage(_ref) {
   };
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_layout_layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "xl:w-1/2 md:w-1/2 w-full my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg"
+    className: "xl:w-1/2 md:w-1/2 w-full my-10 flex flex-col gap-5 m-auto md:p-5 lg:p-20 bg-gray-100 rounded-lg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], {
     id: "outlined-basic",
     label: "Email",
@@ -26167,7 +26209,6 @@ function HomePage(_ref) {
       graus = _useState4[0],
       setGarus = _useState4[1];
 
-  console.log("Kll");
   var answer = 0;
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useLocation)();
   if (location.state !== null && location.state.answer !== undefined) answer = location.state.answer;
@@ -26410,7 +26451,6 @@ function PercursosPage() {
       setCourses = _useState2[1];
 
   var getData = function getData() {
-    console.log("ss");
     axios__WEBPACK_IMPORTED_MODULE_3___default().post("/api/course.get", {
       graus: graus,
       city: city,
@@ -26447,6 +26487,7 @@ function PercursosPage() {
         type = location.state.type;
       }
 
+      console.log(graus, city, type);
       getData();
     }
   }, []);

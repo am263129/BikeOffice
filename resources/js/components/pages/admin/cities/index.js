@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -16,34 +16,52 @@ const MySwal = withReactContent(swal);
 
 export default function CityPage() {
     const [cities, setCities] = useState([]);
-    const [newData, setNewData] = useState("");
+    const [filter, setFilter] = useState("");
 
     const addData = () => {
-        if (newData !== "" && newData != null)
-            axios
-                .post("/api/city.create", { data: newData })
-                .then((response) => {
-                    console.log(response.data);
-                    setCities([...cities, response.data]);
-                    setNewData("");
-                })
-                .catch((error) => {
-                    console.log("ERROR:: ", error.response.data);
-                });
-        else {
-            MySwal.fire({
-                title: <strong>Erro !</strong>,
-                html: <i>Insira a Cidade</i>,
-                icon: "info",
-            });
-        }
+        MySwal.fire({
+            title: "Insira o novo nome da cidade",
+            input: "text",
+            inputAttributes: {
+                autocapitalize: "off",
+            },
+            confirmButtonText: "Adicionar",
+            showLoaderOnConfirm: true,
+            preConfirm: (city) => {
+                if (city !== "" && city != null)
+                    axios
+                        .post("/api/city.create", { data: city })
+                        .then((response) => {
+                            console.log(response.data);
+                            setCities([...cities, response.data]);
+                            setFilter("");
+                            MySwal.fire({
+                                title: <strong>sucesso !</strong>,
+                                html: <i>Nova cidade adicionada</i>,
+                                icon: "success",
+                            });
+                        })
+                        .catch((error) => {
+                            console.log("ERROR:: ", error.response.data);
+                        });
+                else {
+                    MySwal.fire({
+                        title: <strong>Erro !</strong>,
+                        html: <i>Insira a Cidade</i>,
+                        icon: "info",
+                    });
+                }
+            },
+            allowOutsideClick: () => !MySwal.isLoading(),
+        }).then((result) => {
+            console.log(result);
+        });
     };
 
     const getData = () => {
         axios
-            .post("/api/city.get")
+            .post("/api/city.get",{filter:filter})
             .then((response) => {
-                console.log(response.data);
                 setCities(response.data);
             })
             .catch((error) => {
@@ -58,7 +76,7 @@ export default function CityPage() {
             icon: "info",
             showCancelButton: true,
             confirmButtonText: "Excluir",
-            cancelButtonText:"Cancelar",
+            cancelButtonText: "Cancelar",
             preConfirm: () => {
                 axios
                     .post("/api/city.delete", { id: id })
@@ -68,7 +86,6 @@ export default function CityPage() {
                             console.log("remove");
                             setCities(arrayRemove(cities, id));
                         }
-                        console.log(response.data);
                     })
                     .catch((error) => {
                         console.log("ERROR:: ", error.response.data);
@@ -84,12 +101,13 @@ export default function CityPage() {
     }
 
     const handleChange = (event) => {
-        setNewData(event.target.value);
+        setFilter(event.target.value);
     };
 
-    React.useEffect(() => {
+    useEffect(()=>{
         getData();
-    }, []);
+    },[filter])
+
     return (
         <AdminLayout>
             <div className="w-full py-10 px-10 overflow-auto ">
@@ -99,7 +117,7 @@ export default function CityPage() {
                         label="Nome da Cidade"
                         variant="outlined"
                         className="bg-white w-full"
-                        value={newData}
+                        value={filter}
                         onChange={handleChange}
                     />
                     <Button

@@ -17,9 +17,11 @@ class TypoController extends Controller
 
 
 
-    public function getTypos(Request $ruquest)
+    public function getTypos(Request $request)
     {
-        $result = Typology::select()->get();
+        $result = Typology::select()
+        ->where('name','like','%'.$request->get('filter').'%')
+        ->get();
         return response()->json($result);
     }
 

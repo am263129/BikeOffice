@@ -91,7 +91,7 @@ export default function SigninPage({ props }) {
     };
     return (
         <Layout>
-            <div className="xl:w-1/2 md:w-1/2 w-full my-10 flex flex-col gap-5 m-auto p-20 bg-gray-100 rounded-lg">
+            <div className="xl:w-1/2 md:w-1/2 w-full my-10 flex flex-col gap-5 m-auto md:p-5 lg:p-20 bg-gray-100 rounded-lg">
                 <TextField
                     id="outlined-basic"
                     label="Email"

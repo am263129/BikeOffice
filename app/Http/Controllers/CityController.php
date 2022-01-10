@@ -19,7 +19,10 @@ class CityController extends Controller
 
     public function getCities(Request $ruquest)
     {
-        $result = City::select()->get();
+        
+        $result = City::select()
+        ->where('name','like','%'.$ruquest->filter.'%')
+        ->get();
         return response()->json($result);
     }
 

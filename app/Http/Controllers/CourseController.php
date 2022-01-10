@@ -70,7 +70,7 @@ class CourseController extends Controller
         //do serach option
         if ($graus != "" && $city != "") {
             $result = Course::select()
-                ->where([['graus', "=", $graus], ['city', '=', $city]])
+                ->where([['graus', "=", $graus], ['city', '=', $city],['type',"=",$type]])
                 ->get();
         } else {
             $result = Course::select()->get();

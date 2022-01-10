@@ -15,8 +15,6 @@ import PrimaryButton from "../../../components/primarybtn";
 export default function HomePage({ route, navigation }) {
     const [cities, setCities] = useState([]);
     const [graus, setGarus] = useState([]);
-
-    console.log("Kll")
     let answer = 0;
     let location = useLocation();
     if (location.state !== null && location.state.answer !== undefined)

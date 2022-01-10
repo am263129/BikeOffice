@@ -31,7 +31,7 @@ function Example() {
                     <Route path="/test" element={<TestPage />} />
                     <Route path="/percursos" element={<PercursosPage />} />
                     <Route path="/percurso" element={<PercursoPage />} />
-                    <Route path="/admin.home" element={<AdminPage />} />
+                    <Route path="/admin.home" element={<CityPage />} />
                     <Route path="/admin.graus" element={<TypologyPage />} />
                     <Route path="/admin.city" element={<CityPage />} />
                     <Route path="/admin.course" element={<CoursePage />} />

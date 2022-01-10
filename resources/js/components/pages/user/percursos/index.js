@@ -19,7 +19,6 @@ export default function PercursosPage() {
     const [courses, setCourses] = useState([]);
 
     const getData = () => {
-        console.log("ss");
         axios
             .post("/api/course.get", {
                 graus: graus,
@@ -55,6 +54,7 @@ export default function PercursosPage() {
             if (location.state.type !== undefined) {
                 type = location.state.type;
             }
+            console.log(graus,city,type)
             getData();
         }
     }, []);

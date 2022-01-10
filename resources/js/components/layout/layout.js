@@ -11,7 +11,6 @@ export default function Layout({ children }) {
     //         navigate("/signin");
     //     }
     // });
-    console.log("K")
     return (
         <div className="rounded-lg p-5 flex justify-center">
             <div className="layout-container gap-5 flex flex-col xl:w-custom-full">
